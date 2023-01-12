@@ -6,7 +6,7 @@ movieBtn.addEventListener("click",()=>{
     .then(response => response.json())
     .then(data => {
         console.log(data) 
-
+        
 
         // make use of the data tp render stuff
     })
