@@ -1,5 +1,8 @@
 const movieInput = document.querySelector("#Movie-input");
 const movieBtn = document.querySelector("#movieBtn");
+const genreInput = document.querySelector("#Genre-input");
+const genreBtn = document.querySelector("#genreBtn");
+
 
 movieBtn.addEventListener("click",()=>{
     fetch("/api/search/" + movieInput.value)
