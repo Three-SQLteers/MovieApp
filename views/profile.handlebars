@@ -1,7 +1,17 @@
-<div class = "row mt-4">
+<div class = "col-md-6 profile">
     <h1>Your Profile </h1>
-    {{#each profiles as |profile|}}
+     <h2>{{name}}</h2>
+     <p>{{information}}</p>
 
+
+    <div class="col-md-6">
+        <p>Created by {{user.name}} on {{format_date date_created}}</p>
+
+    </div>
+    <div class="col-md-3">
+        <button id="edit"></button>
+    </div>
+</div>
 
 </div>
 
