@@ -46,7 +46,7 @@ function showMovies(data) {
 
 
     data.results.forEach(movie => {
-        const { title, poster_path, release_date, overview } = movie;
+        const { title, poster_path, genre, release_date, overview } = movie;
        
         let movieCard = document.createElement("div");
         let movieTitle = document.createElement("h2");
@@ -56,8 +56,8 @@ function showMovies(data) {
 
         let rating = document.createElement("li");
         let Movierelease_date = document.createElement("p");
-        let Movieoverview = document.createElement("p");
-        let genre = document.createElement("li");
+        let movieOverview = document.createElement("p");
+        let movieGenre = document.createElement("p");
         let anchorContainer = document.createElement("a");
         let selectMovie = document.createElement("button");
 
@@ -67,13 +67,16 @@ function showMovies(data) {
 
         movieTitle.textContent = title;
         Movierelease_date.textContent = release_date;
-        Movieoverview.textContent= overview
-        selectMovie.textContent = 'select movie'
+        movieOverview.textContent= overview;
+        movieGenre.textContent = genre;
+        selectMovie.textContent = 'Review Movie'
 
         poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${poster_path}`)
+        poster.setAttribute('alt', `${title}'s movie poster`)
+
 
         anchorContainer.append(selectMovie)
-        movieCard.append(poster, movieTitle, Movierelease_date, anchorContainer)
+        movieCard.append(poster, movieTitle, movieGenre, Movierelease_date, anchorContainer)
 
         // movieEl.handlebars = `
         //      <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
