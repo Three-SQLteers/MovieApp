@@ -48,7 +48,7 @@ function showMovies(data) {
         const { title, poster_path, release_date, overview } = movie;
        
         let movieCard = document.createElement("div");
-        let movieTitle = document.createElement("h3");
+        let movieTitle = document.createElement("h2");
         let poster = document.createElement("img");
 
         let listEl = document.createElement("ul");
@@ -60,6 +60,8 @@ function showMovies(data) {
         let anchorContainer = document.createElement("a");
         let selectMovie = document.createElement("button");
 
+        movieCard.setAttribute("class","movieCard")
+        searchResults.setAttribute("class", "searchResults")
         anchorContainer.setAttribute('href', `/movie/${title}`)
 
         movieTitle.textContent = title;
