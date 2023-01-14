@@ -1,36 +1,35 @@
 
-const reviewBtn = document.querySelector("#reviewBtn");
-
-
-
-async function signupFormHandler(event){
+async function reviewFormHandler(event){
     event.preventDefault();
 
     //this code will get data from the form
-    const movieReview = document.querySelector("#movieComments");
+    const review_string = document.querySelector("#movieComments").value;
 
 
-    if(movieReview && password){
-        const response = await fetch('/api/users',{
+    if(review_string){
+        const response = await fetch('/api/moviereviews',{
             method: 'POST',
             body: JSON.stringify({
-                username,
-                password
-            }),
+                review_string,
+              
+              // id,
+            // date_created,
+                }),
             headers:{'Content-Type': 'application/json'}
+           
         });
-
+ console.log('Post created!', review_string);
         // checking the response status
         if(response.ok){
-            console.log('Account created!');
+            console.log('Post created!');
 
             // this is login handler
-            document.location.replace('/login');
+            
         }else {
             alert(response.statusText);
         }
     }
 }
 
+document.querySelector('#reviewBtn').addEventListener('click',reviewFormHandler);
 
-document.querySelector('#signup-form').addEventListener('submit',signupFormHandler);
