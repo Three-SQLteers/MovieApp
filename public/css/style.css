@@ -42,6 +42,7 @@
     border: 2pt solid black;
     max-width: 204px;
     margin: 10px;
+    padding-bottom: 5pt;
   }
   
   aside {
