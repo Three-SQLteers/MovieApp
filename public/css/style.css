@@ -27,10 +27,21 @@
     border-bottom-style: solid;
   }
   
-  main {
+  /* from the movie project */
+  .searchResults {
     display: flex;
     flex-wrap: wrap;
-    flex-grow: 1;
+    justify-content: center;
+    margin: 5pt;
+    padding: 5pt;
+  }
+
+  .movieCard {
+    text-align: center;
+    justify-content: center;
+    border: 2pt solid black;
+    max-width: 204px;
+    margin: 10px;
   }
   
   aside {

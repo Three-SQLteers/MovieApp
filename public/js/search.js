@@ -28,31 +28,71 @@ const getPosterUrl = (poster_path) => {
     return `https://image.tmdb.org/t/p/w500${poster_path}`
 };
 
-// make movie card
-const movieInfo = ({poster_path, title, release_date, overview, rating}) => {
-    let body = document.body;
-    let movieCard = document.createElement("div");
-    let title = document.createElement("h3");
-    let poster = document.createElement("img");
 
-    let listEl = document.createElement("ul");
+// get movies
+function getMovies(url) {
+    lastUrl = url;
+    fetch(url).then(res => res.json()).then(data => {
+        console.log(data.results)
+        if (data.results.length !== 0) {
+            showMovies(data.results);
+        }
+    }
+    )
+}
 
-    let rating = document.createElement("li");
-    let release_date = document.createElement("li");
-    let overview = document.createElement("li");
-    let genre = document.createElement("li");
+// make movie card this way?
+function showMovies(data) {
 
-    // title.textContent = 
-    // rating.textContent = 
-    // release_date.textContent = 
-    // overview.textContent = 
-    // genre.textContent = 
 
-    body.appendChild(movieCard);
-    title.appendChild(title);
-    poster.appendChild(poster_path);
-    listEl.appendChild(rating);
-    listEl.appendChild(release_date);
-    listEl.appendChild(overview);
-    listEl.appendChild(genre);
-};
+    data.results.forEach(movie => {
+        const { title, poster_path, release_date, overview } = movie;
+       
+        let movieCard = document.createElement("div");
+        let movieTitle = document.createElement("h2");
+        let poster = document.createElement("img");
+
+        let listEl = document.createElement("ul");
+
+        let rating = document.createElement("li");
+        let Movierelease_date = document.createElement("p");
+        let Movieoverview = document.createElement("p");
+        let genre = document.createElement("li");
+        let anchorContainer = document.createElement("a");
+        let selectMovie = document.createElement("button");
+
+        movieCard.setAttribute("class","movieCard")
+        searchResults.setAttribute("class", "searchResults")
+        anchorContainer.setAttribute('href', `/movie/${title}`)
+
+        movieTitle.textContent = title;
+        Movierelease_date.textContent = release_date;
+        Movieoverview.textContent= overview
+        selectMovie.textContent = 'select movie'
+
+        poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${poster_path}`)
+
+        anchorContainer.append(selectMovie)
+        movieCard.append(poster, movieTitle, Movierelease_date, anchorContainer)
+
+        // movieEl.handlebars = `
+        //      <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
+        //     <div class="movie-info">
+        //         <h3>${title}</h3>
+        //         <span class="${getColor(release_date)}">${release_date}</span>
+        //     </div>
+        //     <div class="overview">
+        //         <h3>Overview</h3>
+        //         ${overview}
+        //         <br/> 
+        //     </div>
+        // `
+
+        searchResults.appendChild(movieCard);
+
+        // document.getElementById(id).addEventListener('click', () => {
+        //     console.log(id)
+        //     openNav(movie)
+        // })
+    })
+}
