@@ -1,7 +1,23 @@
 const router = require('express').Router();
 const { Movie, Painting } = require('../models');
+const Review = require('../../models/Review');
 // Import the custom middleware
 const withAuth = require('../utils/auth');
+
+router.post('/', async (req, res) => {
+  // Use Sequelize's `create()` method to add a row to the table
+  // Similar to `INSERT INTO` in plain SQL
+  try {
+    const postReview = await User.create({
+      review: req.body.review_string,
+     
+    });
+    res.status(200).json(postReview);
+    console.log(postReview);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 
 // GET all movies for homepage
 router.get('/', async (req, res) => {
