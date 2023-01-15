@@ -1,28 +1,17 @@
-//const postId = document.querySelector('input[name="review-id"]')
-//console.log("testing");
-//console.log(postId);
-const  reviewFormHandler = async (event) =>{
-    event.preventDefault()
+async function reviewFormHandler(event){
+    event.preventDefault();
 
     //this code will get data from the form
-    const review_string = document.querySelector("#movieComments").value;
-    //console.log("testing");
+    const review_string = document.querySelector("#movieComments").value.trim();
 
 
     if(review_string){
-        const response = await fetch('/api/review',{
+        const response = await fetch(`/api/review`,{
             method: 'POST',
-            body: JSON.stringify({
-               
-                review_string,
-              
-              // id,
-            // date_created,
-                }),
+            body: JSON.stringify({review_string}),
             headers:{'Content-Type': 'application/json'}
            
         });
-        console.log('response', response);
  console.log('Post created!', review_string);
         // checking the response status
         if(response.ok){

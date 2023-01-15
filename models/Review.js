@@ -5,29 +5,31 @@ class Review extends Model {}
 
 Review.init(
   {
-    id: {
+     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    movie_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
+       allowNull: false,
+       primaryKey: true,
+       autoIncrement: true,
+     },
+    name: {
+      type: DataTypes.DATE,
+       allowNull: false,
+       defaultValue: DataTypes.NOW,
+     },
     review_integer: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
+      defaultValue: 0,
+     },
     review_string: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    date_created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
+     date_created: {
+       type: DataTypes.DATE,
+       allowNull: false,
+       defaultValue: DataTypes.NOW,
+     },
     // user_id: {
     //   type: DataTypes.INTEGER,
     //   references: {

@@ -11,16 +11,15 @@
    <section id="search-results"></section>
 
 
-   <div"flex align-content-center">
-<form "flex align-content-center">
-<textarea method="post" name="comments" id="movieComments" style="width:96%;height:150px;padding:2%;font-size:1.2em;background:url('https://gallery.yopriceville.com/var/resizes/Backgrounds/Cinema_Background.jpg?m=1399672800');background-position:center center;background-repeat:no-repeat;">
-Enter your comments here...
-{{review_string}}
-</textarea>
-         <input id="reviewBtn" type="submit" value="Submit">
-      </form>
-</div>
-
-
+ <form>
+<label for="movieComments">
+     Review:
+    </label>
+    <br />
+    <textarea id="movieComments" name="review" rows="5" cols="30" style="width:96%;height:150px;padding:2%;font-size:1.2em;background:url('https://gallery.yopriceville.com/var/resizes/Backgrounds/Cinema_Background.jpg?m=1399672800');background-position:center center;background-repeat:no-repeat;">
+      {{review_string}}
+    </textarea>
+     <button id="reviewBtn" type="submit" value="Submit">Post</button>
+</form>
   <script src="/js/search.js"></script>
   <script src="/js/reviews.js"></script>
