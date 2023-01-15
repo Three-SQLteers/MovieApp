@@ -3,18 +3,13 @@ async function reviewFormHandler(event){
     event.preventDefault();
 
     //this code will get data from the form
-    const review_string = document.querySelector("#movieComments").value;
+    const review_string = document.querySelector("#movieComments").value.trim();
 
 
     if(review_string){
-        const response = await fetch('/api/reviewRoutes',{
+        const response = await fetch(`/api/review`,{
             method: 'POST',
-            body: JSON.stringify({
-                review_string,
-              
-              // id,
-            // date_created,
-                }),
+            body: JSON.stringify({review_string}),
             headers:{'Content-Type': 'application/json'}
            
         });
