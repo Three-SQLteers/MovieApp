@@ -7,7 +7,7 @@ async function reviewFormHandler(event){
 
 
     if(review_string){
-        const response = await fetch('/api/review',{
+        const response = await fetch('/api/reviewRoutes',{
             method: 'POST',
             body: JSON.stringify({
                 review_string,

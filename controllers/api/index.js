@@ -2,6 +2,8 @@ const router = require('express').Router();
 const axios = require('axios')
 require('dotenv').config();
 
+//const reviewRoutes = require('./reviewRoutes');
+
 router.get('/', async (req, res) => {
 //     // Add a comment describing the purpose of the render method
 //     // This method is rendering the 'all' Handlebars.js template. This is how we connect each route to the correct template.
@@ -40,10 +42,10 @@ router.get('/search/:genreName',(req, res) => {
   })
 // //const userRoutes = require('./user-routes.js');
 //const postRoutes = require('./post-routes');
-//const commentRoutes = require('./comment-routes');
+//const reviewRoutes = require('./reviewRoutes');
 
 //router.use('/users', userRoutes);
 //router.use('/posts', postRoutes);
-//router.use('/comments', commentRoutes);
+//router.use('/reviews', reviewRoutes);
 
 module.exports = router;
