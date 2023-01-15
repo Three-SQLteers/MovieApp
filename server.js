@@ -10,6 +10,8 @@ const sequelize = require('./config/connection');
 //const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const Review = require('./models/Review');
+const Movie = require('./models/Movie');
+const User = require('./models/User');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
