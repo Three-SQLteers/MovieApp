@@ -2,9 +2,9 @@ const router = require('express').Router();
 //const {Review} = require('../models');
 const {Review} = require('../../models');
 // Import the custom middleware
-//const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
-router.post('/', async (req, res) => {
+/*router.post('/', async (req, res) => {
   // Use Sequelize's `create()` method to add a row to the table
   // Similar to `INSERT INTO` in plain SQL
   try {
@@ -17,24 +17,24 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-});
+});*/
 
-// router.post('/', async (req, res) => {
+ router.post('/', withAuth, async (req, res) => {
 //   // Use Sequelize's `create()` method to add a row to the table
 //   // Similar to `INSERT INTO` in plain SQL
-// const body = req.body;
-//   try {
-//     const postReview = await Review.create({
-// ...body,
-//       review: req.body.review_string,
+ const body = req.body;
+  try {
+    const postReview = await Review.create({
+...body,
+      review: req.body.review_string,
      
-//     });
-//     res.json(postReview);
-//     console.log(postReview);
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+    });
+    res.json(postReview);
+    console.log(postReview);
+    } catch (err) {
+    res.status(500).json(err);
+  }
+ });
 
 
 

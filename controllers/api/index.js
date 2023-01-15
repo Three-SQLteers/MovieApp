@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const axios = require('axios')
-require('dotenv').config();
+//require('dotenv').config();
 
 //const reviewRoutes = require('./reviewRoutes');
 
