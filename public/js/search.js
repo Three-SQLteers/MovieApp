@@ -3,12 +3,11 @@ const movieBtn = document.querySelector("#movieBtn");
 const genreInput = document.querySelector("#Genre-input");
 const genreBtn = document.querySelector("#genreBtn");
 const searchResults = document.getElementById("search-results");
+const popupContainer = document.querySelector("#popupContainer")
 
 const API_KEY = 'api_key=c37d08875afe5ad2df252dfaa348f06b';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const searchURL = BASE_URL + '/search/movie?' + API_KEY + '&language=en-US&query='  + movieInput.value + '&page=1&include_adult=false';
 
 
 movieBtn.addEventListener("click", () => {
@@ -16,12 +15,17 @@ movieBtn.addEventListener("click", () => {
     fetch(BASE_URL + '/search/movie?' + API_KEY + '&language=en-US&query='  + movieInput.value + '&page=1&include_adult=false')
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            console.log(data);
             // make use of the data to render stuff
             showMovies(data);
         })
 })
 
+function addClickEffectToCard (data) {
+    data.forEach(movieCard => {
+        movieCard.addEventListener('click', () => showPopup(movieCard))
+    })
+}
 
 // get poster
 const getPosterUrl = (poster_path) => {
@@ -41,12 +45,12 @@ function getMovies(url) {
     )
 }
 
-// make movie card this way?
+// Movie Card
 function showMovies(data) {
 
 
     data.results.forEach(movie => {
-        const { title, poster_path, genre, release_date, overview } = movie;
+        const { title, poster_path, genre, release_date, overview, id } = movie;
        
         let movieCard = document.createElement("div");
         let movieTitle = document.createElement("h2");
@@ -64,13 +68,13 @@ function showMovies(data) {
         movieCard.setAttribute("class","movieCard")
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" ) 
-        anchorContainer.setAttribute('href', `/moviereviews`)
-
+        anchorContainer.setAttribute('href', `/moviereviews`)        
+        
         movieTitle.textContent = title;
         Movierelease_date.textContent = release_date;
         movieOverview.textContent= overview;
         movieGenre.textContent = genre;
-        selectMovie.textContent = 'Review Movie'
+        selectMovie.textContent = "Review Movie";
 
         poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${poster_path}`)
         poster.setAttribute('alt', `${title}'s movie poster`)
@@ -99,4 +103,7 @@ function showMovies(data) {
         //     openNav(movie)
         // })
     })
+    
 }
+
+
