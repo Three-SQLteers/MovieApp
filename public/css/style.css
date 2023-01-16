@@ -26,7 +26,11 @@
     color: var(--secondary);
     border-bottom-style: solid;
   }
-  
+  #navbar { 
+    display: flex;
+    justify-content: center;
+    margin: 5rem
+  }
   /* from the movie project */
   .searchResults {
     display: flex;
@@ -54,7 +58,6 @@
   }
   
   nav {
-    display: flex;
     background-color: var(--secondary);
   }
   
