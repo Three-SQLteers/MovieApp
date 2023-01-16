@@ -6,13 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "watch": "nodemon server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/seed.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.2.2",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
@@ -22,6 +21,10 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   }
+<<<<<<< HEAD
   
   }
 
+=======
+}
+>>>>>>> 411fc7b3e669e3edc6b16304ce19736a5b65476e
