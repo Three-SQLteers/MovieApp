@@ -44,7 +44,11 @@
     margin: 10px;
     padding-bottom: 5pt;
   }
-  
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   aside {
     flex: 0;
     background-color: var(--tertiary);
