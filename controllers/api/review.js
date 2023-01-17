@@ -6,7 +6,7 @@ const axios = require('axios');
 // const searchRoutes = require('./search')
 
 
-// CREATE new user
+// CREATE new review
 router.post('/', async (req, res) => {
   try {
     const reviewData = await Review.create({
@@ -26,25 +26,16 @@ router.post('/', async (req, res) => {
   }
 });
 
-// // Create movie page
-// router.get('/', async (req, res) => {
-//       res.render('all');
-//     });
+// Create movie page
+router.get('/', async (req, res) => {
+      res.render('all');
+    });
 
-// router.get('/search/:movieName', (req, res) => {
+router.get('/moviereviews/:id', (req, res) => {
+console.log('here')
 
-//   try {
-//     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&page=1&include_adult=false&query=${req.params.movieName}`)
-//     .then((response) => {
-//       console.log(response.data)
-//       res.json(response.data)
-//     })
-//   } catch(err) {
-//     console.log(err)
-//     // res.json(err)
-//     res.send("error")
-//   }
-// });
+  
+});
 
 // router.use('/search', searchRoutes);
 module.exports = router;

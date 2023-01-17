@@ -3,7 +3,6 @@ const movieBtn = document.querySelector("#movieBtn");
 const genreInput = document.querySelector("#Genre-input");
 const genreBtn = document.querySelector("#genreBtn");
 const searchResults = document.getElementById("search-results");
-const popupContainer = document.querySelector("#popupContainer");
 
 const API_KEY = 'api_key=c37d08875afe5ad2df252dfaa348f06b';
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -44,7 +43,7 @@ function showMovies(data) {
         movieCard.setAttribute("class","movieCard")
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" ) 
-        anchorContainer.setAttribute('href', `/moviereviews`)
+        anchorContainer.setAttribute('href', `/moviereviews/${id}`)
         movieId.setAttribute("id", "fetchMovieId")        
         
         movieTitle.textContent = title;
@@ -60,25 +59,7 @@ function showMovies(data) {
         anchorContainer.append(selectMovie)
         movieCard.append(poster, movieId, movieTitle, movieGenre, Movierelease_date, anchorContainer)
 
-        // movieEl.handlebars = `
-        //      <img src="${poster_path? IMG_URL+poster_path: "http://via.placeholder.com/1080x1580" }" alt="${title}">
-        //     <div class="movie-info">
-        //         <h3>${title}</h3>
-        //         <span class="${getColor(release_date)}">${release_date}</span>
-        //     </div>
-        //     <div class="overview">
-        //         <h3>Overview</h3>
-        //         ${overview}
-        //         <br/> 
-        //     </div>
-        // `
-
         searchResults.appendChild(movieCard);
-
-        // document.getElementById(id).addEventListener('click', () => {
-        //     console.log(id)
-        //     openNav(movie)
-        // })
     })
 
 
@@ -88,7 +69,7 @@ function showMovies(data) {
         console.log(getMovieId.textContent);
         
 
-        fetch(BASE_URL + 'movie/search/' + getMovieId.textContent + '?api_key=' + API_KEY + '&language=en-US')
+        fetch(BASE_URL + '/search/id/movie?' + getMovieId.textContent + 'api_key=' + API_KEY + '&language=en-US')
             .then(response => response.json())
                 .then(getMovieId => {
                     
