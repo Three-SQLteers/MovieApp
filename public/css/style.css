@@ -53,6 +53,10 @@
     display: none;
   }
 
+  .hide {
+    display: none;
+  }
+
   aside {
     flex: 0;
     background-color: var(--tertiary);
