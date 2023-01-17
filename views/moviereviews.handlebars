@@ -1,4 +1,38 @@
-!-- <h1>Movie Review</h1>
+<div class="content">
+    <div class="left">
+        <div class="poster-img">
+            <img src="${image_path + movie.poster_path}" alt="{{movie.title}}'s poster">
+        </div>
+        {{!-- <div class="single-info">
+            <span>Add to watch later:</span>
+            <span class="heart-icon">&#9829;</span>
+        </div> --}}
+    </div>
+    <div class="card review-card">
+        <h1>{{movie.title}}</h1>
+        <h3>{{movie.tagline}}</h3>
+        <div class="single-info-container">
+            <div class="single-info">
+                <span>Length:</span>
+                <span>{{movie.runtime}} minutes</span>
+            </div>
+            <div class="single-info">
+                <span>Budget:</span>
+                <span>{{movie.budget}}</span>
+            </div>
+            <div class="single-info">
+                <span>Release Date:</span>
+                <span>{{movie.release_date}}</span>
+            </div>
+        </div>
+        <div class="overview">
+            <h2>Overview</h2>
+            <p>{{movie.overview}}</p>
+        </div>
+    </div>
+</div>
+
+<section id="movie-info"></section>
 
 <form>
     <label for="movieComments">
@@ -10,6 +44,7 @@
       {{review_string}}
     </textarea>
     <button id="reviewBtn" type="submit" value="Submit">Post</button>
+</form>
 
 
 <script src="/js/reviews.js"></script>
