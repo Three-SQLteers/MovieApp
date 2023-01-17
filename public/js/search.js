@@ -46,11 +46,12 @@ function showMovies(data) {
 
 
     data.results.forEach(movie => {
-        const { title, poster_path, genre, release_date, overview } = movie;
+        const { title, poster_path, genre, release_date, overview, id } = movie;
        
         let movieCard = document.createElement("div");
         let movieTitle = document.createElement("h2");
         let poster = document.createElement("img");
+      
 
         let listEl = document.createElement("ul");
 
