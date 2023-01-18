@@ -30,6 +30,7 @@ function showMovies(data) {
         let movieCard = document.createElement("div");
         let movieTitle = document.createElement("h2");
         let poster = document.createElement("img");
+      
 
         let listEl = document.createElement("ul");
 
@@ -43,7 +44,7 @@ function showMovies(data) {
         movieCard.setAttribute("class","movieCard")
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" ) 
-        anchorContainer.setAttribute('href', `/moviereviews/${id}`)
+        anchorContainer.setAttribute('href', `/moviereviews`)
         movieId.setAttribute("id", "fetchMovieId")        
         
         movieTitle.textContent = title;
