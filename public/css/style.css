@@ -49,6 +49,15 @@
     padding-bottom: 5pt;
   }
 
+  .movieInfo {
+    text-align: center;
+    justify-content: center;
+    border: 2pt solid black;
+    max-width: 204px;
+    margin: 10px;
+    padding-bottom: 5pt;
+  }
+
   ::-webkit-scrollbar {
     display: none;
   }

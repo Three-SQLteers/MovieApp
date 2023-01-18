@@ -1,16 +1,19 @@
 const movieInfo = document.getElementById("movie-info");
+const searchResults = document.getElementById("search-results");
 
-const API_KEY = 'api_key=c37d08875afe5ad2df252dfaa348f06b';
+
+const API_KEY = 'c37d08875afe5ad2df252dfaa348f06b';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+// coded for Star Wars
+const API_URL = BASE_URL + '/movie/11?api_key=' + API_KEY;
 
-function showMovies(data) {
+function showMovieInfo(data) {
 
 
     data.results.forEach(movie => {
         const { title, poster_path, genre, release_date, id } = movie;
        
-        let movieCard = document.createElement("div");
+        let movieInfo = document.createElement("div");
         let movieTitle = document.createElement("h2");
         let poster = document.createElement("img");
 
@@ -21,29 +24,29 @@ function showMovies(data) {
         let movieId = document.createElement("p");
         let movieGenre = document.createElement("p");
         let anchorContainer = document.createElement("a");
-        let selectMovie = document.createElement("button");
+        let saveMovieReview = document.createElement("button");
 
-        movieCard.setAttribute("class","movieCard")
+        movieInfo.setAttribute("class","movieInfo")
         searchResults.setAttribute("class", "searchResults")
-        selectMovie.setAttribute("id","reviewbtn" ) 
-        anchorContainer.setAttribute('href', `/moviereviews/${id}`)
+        saveMovieReview.setAttribute("id","reviewbtn" ) 
+        // anchorContainer.setAttribute('href', `/moviereviews/${id}`)
         movieId.setAttribute("id", "fetchMovieId")        
         
         movieTitle.textContent = title;
         Movierelease_date.textContent = release_date;
         movieId.textContent= id;
         movieGenre.textContent = genre;
-        selectMovie.textContent = "Review Movie";
+        saveMovieReview.textContent = "Save Movie Review";
 
         poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${poster_path}`)
         poster.setAttribute('alt', `${title}'s movie poster`)
 
 
-        anchorContainer.append(selectMovie)
-        movieCard.append(poster, movieId, movieTitle, movieGenre, Movierelease_date, anchorContainer)
+        anchorContainer.append(saveMovieReview)
+        movieInfo.append(poster, movieId, movieTitle, movieGenre, Movierelease_date, anchorContainer)
 
 
-        searchResults.appendChild(movieCard);
+        searchResults.appendChild(movieInfo);
 
     })
 };
