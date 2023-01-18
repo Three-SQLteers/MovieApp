@@ -25,7 +25,7 @@ function showMovies(data) {
 
 
     data.results.forEach(movie => {
-        const { title, poster_path, genre, release_date, overview } = movie;
+        const { title, poster_path, genre, release_date, id } = movie;
        
         let movieCard = document.createElement("div");
         let movieTitle = document.createElement("h2");
@@ -44,7 +44,7 @@ function showMovies(data) {
         movieCard.setAttribute("class","movieCard")
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" ) 
-        anchorContainer.setAttribute('href', `/moviereviews/${id}`)
+        anchorContainer.setAttribute('href', `/moviereviews`)
         movieId.setAttribute("id", "fetchMovieId")        
         
         movieTitle.textContent = title;
