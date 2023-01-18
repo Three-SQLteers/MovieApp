@@ -1,16 +1,28 @@
 const movieInfo = document.getElementById("movie-info");
 const searchResults = document.getElementById("search-results");
-
+const REQUIRED_ID = document.querySelector("idToUseInRe");
 
 const API_KEY = 'api_key=c37d08875afe5ad2df252dfaa348f06b';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 
-function showMovies(data) {
+// coded for Star Wars
+const API_URL = BASE_URL + '/movie/' + REQUIRED_ID + '?api_key=' + API_KEY + '&language=en-US';
+
+    
+fetch(API_URL)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        // make use of the data to render stuff
+        showMovieInfo(data);
+    })
 
 
-//     data.results.forEach(movie => {
-//         const { title, poster_path, genre, release_date, id } = movie;
+function showMovieInfo(data) {
+// cannot be forEach
+    data.results.forEach(movie => {
+        const { title, poster_path, genre, release_date, id } = movie;
+
        
         let movieCard = document.createElement("div");
         let movieTitle = document.createElement("h2");
@@ -77,5 +89,6 @@ function showMovies(data) {
 //     }
 // }
 
-// document.querySelector('#reviewBtn').addEventListener('click',reviewFormHandler);
+
+document.querySelector('#reviewBtn').addEventListener('click',reviewFormHandler);
 
