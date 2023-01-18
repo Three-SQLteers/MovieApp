@@ -1,16 +1,16 @@
-// const movieInfo = document.getElementById("movie-info");
-// const searchResults = document.getElementById("search-results");
+const movieInfo = document.getElementById("movie-info");
+const searchResults = document.getElementById("search-results");
 
 
-// const API_KEY = 'api_key=c37d08875afe5ad2df252dfaa348f06b';
-// const BASE_URL = 'https://api.themoviedb.org/3';
-// const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
+const API_KEY = 'api_key=c37d08875afe5ad2df252dfaa348f06b';
+const BASE_URL = 'https://api.themoviedb.org/3';
+const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 
-// function showMovies(data) {
+function showMovies(data) {
 
 
-// //     data.results.forEach(movie => {
-// //         const { title, poster_path, genre, release_date, id } = movie;
+//     data.results.forEach(movie => {
+//         const { title, poster_path, genre, release_date, id } = movie;
        
 //         let movieCard = document.createElement("div");
 //         let movieTitle = document.createElement("h2");
@@ -77,5 +77,6 @@ async function reviewFormHandler(event){
     }
 }
 
-// document.querySelector('#reviewBtn').addEventListener('click',reviewFormHandler);
+
+document.querySelector('#reviewBtn').addEventListener('click',reviewFormHandler);
 

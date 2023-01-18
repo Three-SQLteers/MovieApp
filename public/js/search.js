@@ -44,7 +44,11 @@ function showMovies(data) {
         movieCard.setAttribute("class","movieCard")
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" ) 
-        anchorContainer.setAttribute('href', `/moviereviews${id}`)
+        anchorContainer.setAttribute('href', `/moviereviews/${id}`)
+        movieId.setAttribute("id", "fetchMovieId")
+        anchorContainer.setAttribute("id", "idToUseInRe")        
+        anchorContainer.setAttribute('href', `/moviereviews`)
+
         movieId.setAttribute("id", "fetchMovieId")        
         
         movieTitle.textContent = title;
