@@ -34,4 +34,6 @@ const movie_id = window.location.href.split("/")[4]
 }
 
 
-document.querySelector('#reviewForm').addEventListener('submit',reviewFormHandler);
+document.querySelector('#reviewBtn').addEventListener('click',reviewFormHandler);
+
+// commit comment

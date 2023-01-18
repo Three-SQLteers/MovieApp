@@ -1,8 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
 class Review extends Model {}
-
 Review.init(
   {
      id: {
@@ -11,23 +9,20 @@ Review.init(
        primaryKey: true,
        autoIncrement: true,
      },
-    movie_id: {
+    movie_name: {
       type: DataTypes.STRING,
        allowNull: false,
      },
-
-     fun_review_integer: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0,
-    },
-
     quality_review_integer: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
      },
-     
+    fun_review_integer: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
     review_string: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -53,5 +48,4 @@ Review.init(
     modelName: 'review',
   }
 );
-
 module.exports = Review;
