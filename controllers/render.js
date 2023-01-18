@@ -28,18 +28,17 @@ router.get('/', async (req, res) => {
 
   router.get('/moviereviews/:id', async (req, res) => {
     try {
-      // fix the id and api key here!!!
-      axios.get(`https://api.themoviedb.org/3/movie/11?api_key=c37d08875afe5ad2df252dfaa348f06b&language=en-US`)
+      axios.get(`https://api.themoviedb.org/3/movie/414906?api_key=${process.env.API_KEY}&language=en-US`)
       .then((response) => {
-        console.log(response)
-      const movie = (response)
-      console.log(movie)
+        console.log(response.data)
+        //res.json(response.data)
       })
     } catch(err) {
       console.log(err)
       // res.json(err)
       res.send("error")
     }
+
     res.render('moviereviews');
   });
 
