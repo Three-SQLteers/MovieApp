@@ -27,7 +27,6 @@ router.get('/', async (req, res) => {
   });
 
   router.get('/moviereviews/:id', async (req, res) => {
-    movie;
     try {
       // fix the id and api key here!!!
       axios.get(`https://api.themoviedb.org/3/movie/11?api_key=c37d08875afe5ad2df252dfaa348f06b&language=en-US`)
@@ -41,7 +40,7 @@ router.get('/', async (req, res) => {
       // res.json(err)
       res.send("error")
     }
-    res.render('moviereviews', {movie: movie});
+    res.render('moviereviews');
   });
 
   router.get('/login', async (req, res) => {
