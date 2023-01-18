@@ -30,6 +30,7 @@ function showMovies(data) {
         let movieCard = document.createElement("div");
         let movieTitle = document.createElement("h2");
         let poster = document.createElement("img");
+      
 
         let listEl = document.createElement("ul");
 
@@ -46,6 +47,8 @@ function showMovies(data) {
         anchorContainer.setAttribute('href', `/moviereviews/${id}`)
         movieId.setAttribute("id", "fetchMovieId")
         anchorContainer.setAttribute("id", "idToUseInRe")        
+        anchorContainer.setAttribute('href', `/moviereviews`)
+        movieId.setAttribute("id", "fetchMovieId")        
         
         movieTitle.textContent = title;
         Movierelease_date.textContent = release_date;

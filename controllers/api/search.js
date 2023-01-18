@@ -13,8 +13,9 @@ router.get('/', async (req, res) => {
 router.get('/search/:movieName',(req, res) => {
 
   try {
-    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&page=1&include_adult=false&query=${req.params.movieName}`)
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&page=1&include_adult=false`)
     .then((response) => {
+      
       console.log(response.data)
       res.json(response.data)
     })
