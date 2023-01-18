@@ -1,6 +1,10 @@
-<section id="review-results"></section>
+<section id="review-results">
+    <h1>{{reviewData.title}}</h1>
+    <img src="https://image.tmdb.org/t/p/w200{{reviewData.poster_path}}">
+    
+</section>
 
-<form>
+<form id="reviewForm">
     <label for="movieComments">
         Review:
     </label>
@@ -12,6 +16,6 @@
     <button id="reviewBtn" type="submit" value="Submit">Post</button>
 </form>
 
-<section id="review-results"></section>
+
 
 <script src="/js/reviews.js"></script>

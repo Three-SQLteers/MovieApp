@@ -11,16 +11,23 @@ Review.init(
        primaryKey: true,
        autoIncrement: true,
      },
-    name: {
-      type: DataTypes.DATE,
+    movie_id: {
+      type: DataTypes.STRING,
        allowNull: false,
-       defaultValue: DataTypes.NOW,
      },
-    review_integer: {
+
+     fun_review_integer: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+    },
+
+    quality_review_integer: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
      },
+     
     review_string: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -30,13 +37,13 @@ Review.init(
        allowNull: false,
        defaultValue: DataTypes.NOW,
      },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id',
-    //   },
-    // },
+    user_id: {
+     type: DataTypes.INTEGER,
+    references: {
+        model: 'user',
+        key: 'id',
+      },
+   },
   },
   {
     sequelize,

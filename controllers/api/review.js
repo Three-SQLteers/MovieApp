@@ -7,17 +7,15 @@ const { Review } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const reviewData = await Review.create({
-      id: req.body.id,
-      movie_name: req.body.name,
+      movie_id: req.body.movie_id,
       quality_review_integer: req.body.quality_review_integer,
       fun_review_integer: req.body.fun_review_integer,
       review_string: req.body.review_string,
-      date_created: req.body.date_created
+      user_id:req.session.user_id
     });
-    req.session.save(() => {
-      // req.session.loggedIn = true;
+   
       res.status(200).json(reviewData);
-    });
+    
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

@@ -12,9 +12,9 @@ const Review = require('./Review');
 //    foreignKey: 'movie_id'
 //  })
 
- Movie.hasMany(Review, {
-   foreignKey: 'movie_id'
- })
+//  Movie.hasMany(Review, {
+//    foreignKey: 'movie_id'
+//  })
 
 //  Movie.belongsToMany(User, {
 //    foreignKey: 'user_id'
