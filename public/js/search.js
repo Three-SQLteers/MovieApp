@@ -48,6 +48,7 @@ function showMovies(data) {
         movieId.setAttribute("id", "fetchMovieId")
         anchorContainer.setAttribute("id", "idToUseInRe")        
         anchorContainer.setAttribute('href', `/moviereviews`)
+
         movieId.setAttribute("id", "fetchMovieId")        
         
         movieTitle.textContent = title;
