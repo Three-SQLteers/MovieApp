@@ -34,6 +34,6 @@ async function reviewFormHandler(event){
 }
 
 
-document.querySelector('#reviewBtn').addEventListener('click',reviewFormHandler);
+document.querySelector('#reviewForm').addEventListener('submit',reviewFormHandler);
 
 // commit comment

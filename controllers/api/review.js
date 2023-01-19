@@ -9,6 +9,7 @@ const { Review, User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
+    console.log(`current request: ${req.session.user_id}`)
     const reviewData = await Review.create({
       movie_id: req.body.movie_id,
       quality_review_integer: req.body.quality_review_integer,

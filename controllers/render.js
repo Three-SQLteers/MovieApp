@@ -5,7 +5,8 @@ const { Review } = require('../models');
 // const { parse } = require('dotenv');
 // const { response } = require('express');
 require('dotenv').config();
-
+//const dashboardRoutes = require('./dashboard-routes.js');
+//const homeRoutes = require('./home-routes');
 router.get('/', async (req, res) => {
     res.render('all');
   });
@@ -25,8 +26,13 @@ router.get('/', async (req, res) => {
   router.get('/moviereviews/:id', async (req, res) => {
     try {
       axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US`)
-      .then((response) => {
-        console.log(response.data)   
+      .then(async (response) => {
+        const reviews = await Review.findAll({
+          where: {
+            movie_id: response.data.id
+          }
+        });
+        console.log(reviews);
         res.render('moviereviews',{
           reviewData: response.data
         });
