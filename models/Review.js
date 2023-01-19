@@ -9,7 +9,7 @@ Review.init(
        primaryKey: true,
        autoIncrement: true,
      },
-    movie_name: {
+    movie_id: {
       type: DataTypes.STRING,
        allowNull: false,
      },

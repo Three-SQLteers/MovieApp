@@ -7,8 +7,8 @@ async function reviewFormHandler(event){
     event.preventDefault();
 
     //this code will get data from the form
-    const review_string = document.querySelector("#movieComments").value.trim();
-const movie_id = window.location.href.split("/")[4]
+     const review_string = document.querySelector("#movieComments").value.trim();
+    const movie_id = window.location.href.split("/")[4]
 
     if(review_string){
         const response = await fetch(`/api/review`,{
