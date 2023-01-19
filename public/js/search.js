@@ -12,8 +12,6 @@ movieBtn.addEventListener("click", () => {
     fetch('/api/search/' + movieInput.value)
         .then(response => response.json())
         .then(data => {
-            console.log(data);
-            // make use of the data to render stuff
             showMovies(data);
         })
 })

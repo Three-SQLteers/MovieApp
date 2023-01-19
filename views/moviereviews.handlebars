@@ -1,7 +1,30 @@
-<section id="review-results">
-    <h1>{{reviewData.title}}</h1>
-    <img src="https://image.tmdb.org/t/p/w200{{reviewData.poster_path}}">
-    
+<section id="movie-data" class="movie-data">
+    <section id="review-results" class="review-results">
+        <h1 class="movie-title-class">{{reviewData.title}}</h1>
+        <img src="https://image.tmdb.org/t/p/w200{{reviewData.poster_path}}">
+        <p>{{format_date reviewData.release_date}}</p>
+        <div class="summary">
+            <h4 class="movie-summary-header">Summary</h4>
+            <p class="movie-summary-description">{{reviewData.overview}}</p>
+        </div>
+    </section>
+
+    <section id="averaged-reviews" class="averaged-reviews display-6">
+        <p>Movie Quality: {{reviewData.quality_review_integer}}</p>
+        <p>Fun Factor: {{reviewData.fun_review_integer}}</p>
+    </section>
+</section>
+
+
+
+<section id="user-review-sliders" class="user-review-sliders">
+    {{!-- two sliders to review movies --}}
+    <label for="quality_review_integer" class="form-label">How good was the movie?</label>
+    <input type="range" class="form-range" min="0" max="10" id="quality_review_integer">
+    </br>
+    </br>
+    <label for="fun_review_integer" class="form-label">How fun was the movie?</label>
+    <input type="range" class="form-range" min="0" max="10" id="fun_review_integer">
 </section>
 
 <form id="reviewForm">
@@ -11,7 +34,7 @@
     <br />
     <textarea id="movieComments" name="review" rows="5" cols="30"
         style="width:96%;height:150px;padding:2%;font-size:1.2em;background:url('https://gallery.yopriceville.com/var/resizes/Backgrounds/Cinema_Background.jpg?m=1399672800');background-position:center center;background-repeat:no-repeat;">
-      {{review_string}}
+      {{reviewData.review_string}}
     </textarea>
     <button id="reviewBtn" type="submit" value="Submit">Post</button>
 </form>
