@@ -19,9 +19,30 @@ router.get('/', async (req, res) => {
   router.get('/search', async (req, res) => {
     res.render('search');
   });
-  router.get('/watchlist', async (req, res) => {
-    res.render('watchlist');
-  });
+  router.get('/viewreview', async (req, res) => {
+    try {
+      axios.get(`https://api.themoviedb.org/3/movie/415?api_key=${process.env.API_KEY}&language=en-US`)
+      .then(async (response) => {
+        const reviews = await Review.findAll({
+          where: {
+            movie_id: response.data.id,
+           
+          }
+        });
+        console.log(typeof(reviews))
+        console.log(reviews[0].review_string);
+        res.render('viewreview',{
+          reviewData: response.data
+        });
+        //res.json(response.data)
+      })
+    } catch(err) {
+      console.log(err)
+      // res.json(err)
+      res.send("error")
+    }
+});
+
 
   router.get('/moviereviews/:id', async (req, res) => {
     try {
@@ -29,10 +50,18 @@ router.get('/', async (req, res) => {
       .then(async (response) => {
         const reviews = await Review.findAll({
           where: {
-            movie_id: response.data.id
+            movie_id: response.data.id,
+           
           }
         });
-        console.log(reviews);
+        
+        reviews.forEach((Object, dataValues) => {
+       
+        console.log('hello')
+        console.log(Object, dataValues);
+          });
+        console.log(typeof(reviews))
+        console.log(reviews[1].review_string);
         res.render('moviereviews',{
           reviewData: response.data
         });
