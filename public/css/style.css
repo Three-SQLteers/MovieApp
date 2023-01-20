@@ -235,7 +235,19 @@
       border: 1px solid #ccc;
       background: #FFF;
       margin: 0 0 5px;
-      padding: 10px;
+      /* appearance: slider-vertical; */
+  }
+
+  datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 100%;
+  }
+
+  option {
+    font-size: 18pt;
   }
   
   .card-header h2 {
