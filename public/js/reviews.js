@@ -5,7 +5,7 @@ async function reviewFormHandler(event){
     const review_string = document.querySelector("#movieComments").value.trim();
     const quality_review_integer = document.querySelector('#quality_review_integer').value; 
     const fun_review_integer = document.querySelector('#fun_review_integer').value; 
-    const review_string = document.querySelector("#movieComments").value.trim();
+    
 
     const movie_id = window.location.href.split("/")[4]
 
