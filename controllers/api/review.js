@@ -1,9 +1,12 @@
 const router = require('express').Router();
-const { Review } = require('../../models');
+const { Review, User } = require('../../models');
 // const axios = require('axios');
 // require('dotenv').config();
 // const searchRoutes = require('./search')
 // CREATE new review
+  
+
+
 router.post('/', async (req, res) => {
   try {
     console.log(`current request: ${req.session.user_id}`)
@@ -23,11 +26,11 @@ router.post('/', async (req, res) => {
   }
 });
 // Create movie page
-router.get('/', async (req, res) => {
-      res.render('all');
-    });
-router.get('/moviereviews/:id', (req, res) => {
-console.log('here')
-});
+// router.get('/', async (req, res) => {
+//       res.render('all');
+//     });
+// router.get('/moviereviews/:id', (req, res) => {
+// console.log('here')
+
 // router.use('/search', searchRoutes);
 module.exports = router;

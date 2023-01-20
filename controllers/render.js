@@ -1,11 +1,10 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
 const axios = require('axios');
-const { parse } = require('dotenv');
-const { response } = require('express');
-require('dotenv').config();
 const { Review } = require('../models');
-
+// const { parse } = require('dotenv');
+// const { response } = require('express');
+require('dotenv').config();
 //const dashboardRoutes = require('./dashboard-routes.js');
 //const homeRoutes = require('./home-routes');
 router.get('/', async (req, res) => {
@@ -44,11 +43,11 @@ router.get('/', async (req, res) => {
       // res.json(err)
       res.send("error")
     }
+});
 
- 
-  });
 
-  router.get('/login', async (req, res) => {
+
+router.get('/login', async (req, res) => {
     res.render('login');
   });
 // router.use('/', homeRoutes);
