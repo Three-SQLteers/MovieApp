@@ -13,57 +13,11 @@
         <p>Movie Quality: {{reviewData.quality_review_integer}}</p>
         <p>Fun Factor: {{reviewData.fun_review_integer}}</p>
     </section>
+
+    <a class="button" id="movieBtn" href='/moviereviews/{{reviewData.id}}'>Write a review</a>
+
 </section>
 
-
-
-<section id="user-review-sliders" class="user-review-sliders">
-    {{!-- two sliders to review movies --}}
-    <label for="quality_review_integer" class="form-label">How good was the movie?</label>
-    <input type="range" class="form-range" min="0" max="10" id="quality_review_integer" list="quality-values">
-    <datalist id="quality-values" style="font-size: 24pt;">
-        <option value="0" label="The Worst"></option>
-        <option value="1"></option>
-        <option value="2"></option>
-        <option value="3"></option>
-        <option value="4"></option>
-        <option value="5" label="meh"></option>
-        <option value="6"></option>
-        <option value="7"></option>
-        <option value="8"></option>
-        <option value="9"></option>
-        <option value="10" label="The Best!"></option>
-    </datalist>
-    </br>
-    </br>
-    <label for="fun_review_integer" class="form-label">How fun was the movie?</label>
-    <input type="range" class="form-range" min="0" max="10" id="fun_review_integer" list="fun-values">
-    <datalist id="fun-values" style="font-size: 24pt;">
-        <option value="0" label="Boring"></option>
-        <option value="1"></option>
-        <option value="2"></option>
-        <option value="3"></option>
-        <option value="4"></option>
-        <option value="5" label="It's a movie"></option>
-        <option value="6"></option>
-        <option value="7"></option>
-        <option value="8"></option>
-        <option value="9"></option>
-        <option value="10" label="Exciting!"></option>
-    </datalist>
-</section>
-
-<form id="reviewForm">
-    <label for="movieComments">
-        Review:
-    </label>
-    <br />
-    <textarea id="movieComments" name="review" rows="5" cols="30"
-        style="width:96%;height:150px;padding:2%;font-size:1.2em;background:url('https://gallery.yopriceville.com/var/resizes/Backgrounds/Cinema_Background.jpg?m=1399672800');background-position:center center;background-repeat:no-repeat;">
-      {{reviewData.review_string}}
-    </textarea>
-    <button id="reviewBtn" type="submit" value="Submit">Post</button>
-</form>
 
 
 
