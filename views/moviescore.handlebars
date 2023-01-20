@@ -8,6 +8,11 @@
             <p class="movie-summary-description">{{reviewData.overview}}</p>
         </div>
     </section>
+
+    <section id="averaged-reviews" class="averaged-reviews display-6">
+        <p>Movie Quality: {{reviewData.quality_review_integer}}</p>
+        <p>Fun Factor: {{reviewData.fun_review_integer}}</p>
+    </section>
 </section>
 
 
@@ -47,9 +52,7 @@
         <option value="10" label="Exciting!"></option>
     </datalist>
 </section>
-<section>
-    <h3>{{reviews.review_string}}</h3>
-</section>
+
 <form id="reviewForm">
     <label for="movieComments">
         Review:
