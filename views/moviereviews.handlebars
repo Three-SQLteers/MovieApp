@@ -14,6 +14,7 @@
 
 <section id="user-review-sliders" class="user-review-sliders">
     {{!-- two sliders to review movies --}}
+    {{#if loggedIn}}
     <label for="quality_review_integer" class="form-label">How good was the movie?</label>
     <input type="range" class="form-range" min="0" max="10" id="quality_review_integer" list="quality-values">
     <datalist id="quality-values" style="font-size: 24pt;">
@@ -46,6 +47,9 @@
         <option value="9"></option>
         <option value="10" label="Exciting!"></option>
     </datalist>
+    {{else}}
+    <h2>You may only post a review if logged in</h2>
+    {{/if}}
 </section>
 
 
@@ -53,6 +57,7 @@
     <h3>{{reviews.review_string}}</h3>
 </section>
 <form id="reviewForm">
+    {{#if loggedIn}}
     <label for="movieComments">
         Review:
     </label>
@@ -62,6 +67,9 @@
       {{reviewData.review_string}}
     </textarea>
     <button id="reviewBtn" type="submit" value="Submit">Post</button>
+    {{else}}
+    <p></p>
+    {{/if}}
 </form>
 
 
