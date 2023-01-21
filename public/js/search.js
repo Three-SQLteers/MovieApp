@@ -9,7 +9,7 @@ const searchResults = document.getElementById("search-results");
 // Search button functionality
 movieBtn.addEventListener("click", () => {
 
-    Clean();
+    // Clean();
 
     fetch('/api/search/' + movieInput.value)
         .then(response => response.json())
@@ -19,9 +19,9 @@ movieBtn.addEventListener("click", () => {
 })
 
 // Removing previous results
-function Clean(){
-    document.getElementById('search-results').innerHTML='';
-  }  
+// function Clean(){
+//     document.getElementById('search-results').innerHTML='';
+//   }  
 
 // Movie Card with title search
 function showMovies(data) {
