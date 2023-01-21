@@ -45,9 +45,10 @@
     justify-content: center;
     border: 2pt solid black;
     max-width: 204px;
+    height: 304px;
     margin: 10px;
     padding-bottom: 5pt;
-    position:  relative;
+    position: relative;
   }
 
   .movieInfo {
@@ -133,7 +134,9 @@
     background-color: transparent;
     border: none !important;
     font-size: 0;
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
   }
   
   
