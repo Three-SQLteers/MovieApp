@@ -76,4 +76,4 @@ function showMovies(data) {
 
 };
 
-document.querySelector('#movieBtn').addEventListener('click',reviewFormHandler);
+document.querySelector('#movieBtn').addEventListener('click',showMovies);
