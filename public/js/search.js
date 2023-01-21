@@ -51,6 +51,7 @@ function showMovies(data) {
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" )
         selectScore.setAttribute ("id", "scorebtn")
+        selectScore.setAttribute ("class", "poster-button")
         movieScoreAnchor.setAttribute('href', `/moviescore/${id}`)        
         anchorContainer.setAttribute('href', `/moviereviews/${id}`)
         movieId.setAttribute("id", "fetchMovieId")
@@ -62,7 +63,7 @@ function showMovies(data) {
         movieTitle.textContent = title;
         Movierelease_date.textContent = release_date;
         movieGenre.textContent = genre;
-        selectScore.textContent = "Movie Score";
+        // selectScore.textContent = "Movie Score";
         selectMovie.textContent = "Review Movie";
 
 
