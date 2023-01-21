@@ -18,10 +18,11 @@
      <li class="li-inline nav-item"><a href="/search">Search for movie</a></li>
     <li class="li-inline nav-item"><a href="/">Dashboard</a></li>
       <!-- Conditionally render login link with UNLESS-->
-      {{#unless loggedIn}}
-      <li class="li-inline nav-item"><a href="/login">Login</a></li>
-      {{/unless}}
+      {{#if loggedIn}}
       <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+      {{else}}
+      <li class="li-inline nav-item"><a href="/login">Login</a></li>
+      {{/if}}
     </ul>
    
   </nav>

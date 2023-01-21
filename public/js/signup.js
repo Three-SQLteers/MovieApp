@@ -20,7 +20,7 @@ async function signupFormHandler(event){
         if(response.ok){
 
             // this is login handler
-            document.location.replace('/login');
+            document.location.replace('/');
         }else {
             alert(response.statusText);
         }
