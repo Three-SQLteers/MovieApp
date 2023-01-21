@@ -35,10 +35,6 @@ function showMovies(data) {
         let movieTitle = document.createElement("h2");
         let poster = document.createElement("img");
       
-
-        let listEl = document.createElement("ul");
-
-        let rating = document.createElement("li");
         let Movierelease_date = document.createElement("p");
         let movieId = document.createElement("p");
         let movieGenre = document.createElement("p");
@@ -51,14 +47,10 @@ function showMovies(data) {
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" )
         selectScore.setAttribute ("id", "scorebtn")
-        selectScore.setAttribute ("class", "poster-button")
+        // selectScore.setAttribute ("class", "poster-button")
         movieScoreAnchor.setAttribute('href', `/moviescore/${id}`)        
         anchorContainer.setAttribute('href', `/moviereviews/${id}`)
-        movieId.setAttribute("id", "fetchMovieId")
-        anchorContainer.setAttribute("id", "idToUseInRe")        
-        
-
-        movieId.setAttribute("id", "fetchMovieId")        
+        movieId.setAttribute("id", "fetchMovieId")         
         
         movieTitle.textContent = title;
         Movierelease_date.textContent = release_date;
