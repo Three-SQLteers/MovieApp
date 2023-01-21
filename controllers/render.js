@@ -92,20 +92,21 @@ router.get('/moviescore/:id', async (req, res) => {
         const reviews = reviewData.map(review => review.get({ plain: true }))
         console.log(reviews);
 
-        const arrayFun = []
-        const arrayQuality = []
+        const arrayFun = [0]
+        const arrayQuality = [0]
+
         reviews.forEach((score) => {
           arrayFun.push(score.fun_review_integer)
           arrayQuality.push(score.quality_review_integer)
         })
-        const averageFun = arrayFun => arrayFun.reduce((a, b) => a + b) / arrayFun.length;
-        const averageQuality = arrayQuality => arrayQuality.reduce((a, b) => a + b) / arrayQuality.length;
+
+        const averageFun = arrayFun => arrayFun.reduce((a, b) => a + b) / (arrayFun.length - 1);
+        const averageQuality = arrayQuality => arrayQuality.reduce((a, b) => a + b) / (arrayQuality.length - 1);
 
         const reviewObj = {
           funScore: Math.round(averageFun(arrayFun)*100)/100,
           avgScore: Math.round(averageQuality(arrayQuality)*100)/100
         }
-
         res.render('moviescore', {
           reviews, 
           reviewObj,
@@ -114,7 +115,7 @@ router.get('/moviescore/:id', async (req, res) => {
 
         });
 
-      })
+})
   } catch (err) {
     console.log(err)
     // res.json(err)

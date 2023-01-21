@@ -21,8 +21,14 @@ async function reviewFormHandler(event){
            
         });
     }
-}
 
+    goToScore();
+};
+
+function goToScore() {
+    document.location.assign('href', `/moviescore/${id}`);
+    setTimeout(function () { reviewFormHandler() }, 1000);
+  }
 
 document.querySelector('#reviewForm').addEventListener('submit',reviewFormHandler);
 
