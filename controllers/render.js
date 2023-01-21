@@ -133,9 +133,9 @@ router.get('/login', async (req, res) => {
   res.render('login');
 });
 
-router.use('/api', apiRoutes);
-router.use((req, res) => {
-    res.status(404).end();
-  });
+// router.use('/api', apiRoutes);
+// router.use((req, res) => {
+//     res.status(404).end();
+//   });
 
 module.exports = router;
