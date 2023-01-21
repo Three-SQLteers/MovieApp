@@ -20,7 +20,11 @@ router.get('/', async (req, res) => {
     res.render('search');
   });
   router.get('/watchlist', async (req, res) => {
-    res.render('watchlist');
+    res.render('watchlist');      
+      // const box = document.createElement("div");
+      // box.id = "box";
+      // document.body.appendChild(box);
+      // box.textContent = "Hello world!"
   });
 
   router.get('/moviereviews/:id', async (req, res) => {
@@ -32,7 +36,6 @@ router.get('/', async (req, res) => {
             movie_id: response.data.id
           }
         });
-        console.log(reviews);
         res.render('moviereviews',{
           reviewData: response.data
         });
@@ -54,7 +57,6 @@ router.get('/moviescore/:id', async (req, res) => {
           movie_id: response.data.id
         }
       });
-      console.log(reviews);
       res.render('moviescore',{
         reviewData: response.data
       });
@@ -72,8 +74,6 @@ router.get('/moviescore/:id', async (req, res) => {
 router.get('/login', async (req, res) => {
     res.render('login');
   });
-// router.use('/', homeRoutes);
- //router.use('/dashboard', review);
 router.use('/api', apiRoutes);
 router.use((req, res) => {
     res.status(404).end();

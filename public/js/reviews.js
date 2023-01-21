@@ -20,16 +20,6 @@ async function reviewFormHandler(event){
             headers:{'Content-Type': 'application/json'}
            
         });
- console.log('Post created!', review_string);
-        // checking the response status
-        if(response.ok){
-            console.log('Post created!');
-
-            // this is login handler
-            
-        }else {
-            alert(response.statusText);
-        }
     }
 }
 
