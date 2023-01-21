@@ -47,6 +47,7 @@
     max-width: 204px;
     margin: 10px;
     padding-bottom: 5pt;
+    position:  relative;
   }
 
   .movieInfo {
