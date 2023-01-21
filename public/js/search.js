@@ -47,7 +47,7 @@ function showMovies(data) {
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" )
         selectScore.setAttribute ("id", "scorebtn")
-        selectScore.setAttribute ("class", "poster-button")
+        // selectScore.setAttribute ("class", "poster-button")
         movieScoreAnchor.setAttribute('href', `/moviescore/${id}`)        
         anchorContainer.setAttribute('href', `/moviereviews/${id}`)
         movieId.setAttribute("id", "fetchMovieId")         
