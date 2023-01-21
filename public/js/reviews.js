@@ -20,6 +20,7 @@ async function reviewFormHandler(event){
             headers:{'Content-Type': 'application/json'}
            
         });
+        console.log(response)
     }
 
     goToScore();
@@ -30,6 +31,6 @@ function goToScore() {
     setTimeout(function () { reviewFormHandler() }, 1000);
   }
 
-document.querySelector('#reviewBtn"').addEventListener('click',reviewFormHandler);
+document.querySelector('#reviewBtn').addEventListener('click', reviewFormHandler);
 
 // commit comment
