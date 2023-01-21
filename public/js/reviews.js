@@ -30,6 +30,6 @@ function goToScore() {
     setTimeout(function () { reviewFormHandler() }, 1000);
   }
 
-document.querySelector('#reviewForm').addEventListener('submit',reviewFormHandler);
+document.querySelector('#reviewBtn"').addEventListener('click',reviewFormHandler);
 
 // commit comment
