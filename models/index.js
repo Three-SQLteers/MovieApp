@@ -10,7 +10,11 @@ const Review = require('./Review');
 
   // Review.belongsTo(Movie, {
   //   foreignKey: 'movie_id'
-  // })
+
+  Review.belongsTo(User, {
+    foreignKey: 'user_id'
+  })
+
 
 //  Movie.hasMany(Review, {
 //    foreignKey: 'movie_id'

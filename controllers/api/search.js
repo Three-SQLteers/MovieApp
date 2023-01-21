@@ -16,7 +16,6 @@ router.get('/:movieName',(req, res) => {
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${process.env.API_KEY}&language=en-US&query=${req.params.movieName}&page=1&include_adult=false`)
     .then((response) => {
       
-      console.log(response.data)
       res.json(response.data)
     })
   } catch(err) {
@@ -30,9 +29,8 @@ router.get('/:movieName',(req, res) => {
 router.get('/:genreName',(req, res) => {
 
    try {
-  axios.get(`https://api.themoviedb.org/3/genre/movie/list?api_key==${process.env.API_KEY}&language=en-US`)
+  axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=${req.params.genre_id}`)
     .then((response) => {
-      console.log(response.data)
       res.json(response.data)
     })
   } catch(err) {

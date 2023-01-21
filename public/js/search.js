@@ -2,12 +2,14 @@
 
 const movieInput = document.querySelector("#Movie-input");
 const movieBtn = document.querySelector("#movieBtn");
-const genreInput = document.querySelector("#Genre-input");
-const genreBtn = document.querySelector("#genreBtn");
+const similarInput = document.querySelector("#similar-input");
+const similarBtn = document.querySelector("#similarBtn");
 const searchResults = document.getElementById("search-results");
 
 
 movieBtn.addEventListener("click", () => {
+
+    $("#search-results").empty();
 
     fetch('/api/search/' + movieInput.value)
         .then(response => response.json())
@@ -16,7 +18,7 @@ movieBtn.addEventListener("click", () => {
         })
 })
 
-// Movie Card
+// Movie Card with title search
 function showMovies(data) {
 
 
@@ -34,8 +36,8 @@ function showMovies(data) {
         let Movierelease_date = document.createElement("p");
         let movieId = document.createElement("p");
         let movieGenre = document.createElement("p");
+        let movieScoreAnchor = document.createElement("a");
         let anchorContainer = document.createElement("a");
-        let movieScoreAnchor = document.createElement("a")
         let selectMovie = document.createElement("button");
         let selectScore = document.createElement("button");
 
@@ -43,8 +45,8 @@ function showMovies(data) {
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" )
         selectScore.setAttribute ("id", "scorebtn")
+        movieScoreAnchor.setAttribute('href', `/moviescore/${id}`)        
         anchorContainer.setAttribute('href', `/moviereviews/${id}`)
-        movieScoreAnchor.setAttribute('href', `/moviescore/${id}`)
         movieId.setAttribute("id", "fetchMovieId")
         anchorContainer.setAttribute("id", "idToUseInRe")        
         
@@ -54,8 +56,8 @@ function showMovies(data) {
         movieTitle.textContent = title;
         Movierelease_date.textContent = release_date;
         movieGenre.textContent = genre;
+        selectScore.textContent = "Movie Score";
         selectMovie.textContent = "Review Movie";
-        selectScore.textContent = "Movie Score"
 
 
         poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${poster_path}`)
@@ -64,11 +66,13 @@ function showMovies(data) {
 
         anchorContainer.append(selectMovie)
         movieScoreAnchor.append(selectScore)
-        movieCard.append(poster, movieId, movieTitle, movieGenre, Movierelease_date, anchorContainer, movieScoreAnchor)
+        movieCard.append(poster, movieId, movieTitle, movieGenre, Movierelease_date, movieScoreAnchor, anchorContainer )
 
         searchResults.appendChild(movieCard);
-    })
 
+
+
+    })
 
 };
 

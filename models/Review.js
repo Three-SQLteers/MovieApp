@@ -16,12 +16,12 @@ Review.init(
     quality_review_integer: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 0.001,
      },
     fun_review_integer: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0,
+      defaultValue: 0.001,
     },
     review_string: {
       type: DataTypes.STRING,

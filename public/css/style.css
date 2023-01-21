@@ -161,7 +161,7 @@
     justify-content: center;
     font-size: 150%;
     color:black;
-    position: fixed;
+    position: static;
     padding: 10px;
     bottom: 0;
     width: 100%;
@@ -173,7 +173,7 @@
     --primary: #ccdad1;
     --secondary: #9caea9;
     --tertiary: #788585;
-    --light-dark: #6f6866;
+    --light-dark: #320692;
     --dark: #203381;
     --border-radius: .3rem;
   }
@@ -339,16 +339,6 @@
   
   .list-item:hover {
     background-color: var(--dark);
-  }
-  
-  .footer a {
-    display: inline-block;
-    padding: 1em;
-    margin-bottom: .5em;
-    background-color: var(--dark);
-    color: var(--primary);
-    border-radius: var(--border-radius);
-    text-decoration: none;
   }
   
   * {
@@ -563,14 +553,7 @@
       line-height: 1.25;
   }
   
-  
-  footer {
-    border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 110%;
-  }
+
   /* CARDS */
   .card {
     margin: 0 0 20px 0;

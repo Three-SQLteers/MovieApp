@@ -10,12 +10,22 @@
     </section>
 
     <section id="averaged-reviews" class="averaged-reviews display-6">
-        <p>Movie Quality: {{reviewData.quality_review_integer}}</p>
-        <p>Fun Factor: {{reviewData.fun_review_integer}}</p>
+        <p>Movie Quality: {{reviewObj.avgScore}}</p>
+        <p>Fun Factor: {{reviewObj.funScore}}</p>
+
+        <div>
+            <h2>User Comments:</h2>
+            <div>
+                {{#each reviews}}
+                <p>{{review_string}} by {{user.name}}</p>
+                {{/each}}
+            </div>
+        </div>
     </section>
 
-    <a class="button" id="movieBtn" href='/moviereviews/{{reviewData.id}}'>Write a review</a>
+    <a class="button" id="button" href='/moviereviews/{{reviewData.id}}'>Write a review</a>
 
+    <section id="review-box"></section>
 </section>
 
 

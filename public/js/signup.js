@@ -18,10 +18,9 @@ async function signupFormHandler(event){
 
         // checking the response status
         if(response.ok){
-            console.log('Account created!');
 
             // this is login handler
-            document.location.replace('/login');
+            document.location.replace('/');
         }else {
             alert(response.statusText);
         }

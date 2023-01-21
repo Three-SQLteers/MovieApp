@@ -20,19 +20,15 @@ async function reviewFormHandler(event){
             headers:{'Content-Type': 'application/json'}
            
         });
- console.log('Post created!', review_string);
-        // checking the response status
-        if(response.ok){
-            console.log('Post created!');
-
-            // this is login handler
-            
-        }else {
-            alert(response.statusText);
-        }
     }
-}
 
+    goToScore();
+};
+
+function goToScore() {
+    document.location.assign('href', `/moviescore/${id}`);
+    setTimeout(function () { reviewFormHandler() }, 1000);
+  }
 
 document.querySelector('#reviewForm').addEventListener('submit',reviewFormHandler);
 
