@@ -6,10 +6,10 @@ const similarInput = document.querySelector("#similar-input");
 const similarBtn = document.querySelector("#similarBtn");
 const searchResults = document.getElementById("search-results");
 
-
+// Search button functionality
 movieBtn.addEventListener("click", () => {
 
-    $("#search-results").empty();
+    Clean();
 
     fetch('/api/search/' + movieInput.value)
         .then(response => response.json())
@@ -17,6 +17,11 @@ movieBtn.addEventListener("click", () => {
             showMovies(data);
         })
 })
+
+// Removing previous results
+function Clean(){
+    document.getElementById('search-results').innerHTML='';
+  }  
 
 // Movie Card with title search
 function showMovies(data) {
