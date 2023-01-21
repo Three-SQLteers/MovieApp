@@ -81,4 +81,4 @@ function showMovies(data) {
 
 };
 
-// document.querySelector('#movieBtn').addEventListener('click',showMovies);
+
