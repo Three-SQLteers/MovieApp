@@ -2,11 +2,11 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 const axios = require('axios');
 const { Review, User } = require('../models');
-// const { parse } = require('dotenv');
-// const { response } = require('express');
+ 
+
 require('dotenv').config();
-//const dashboardRoutes = require('./dashboard-routes.js');
-//const homeRoutes = require('./home-routes');
+
+
 router.get('/', async (req, res) => {
 
   res.render('all');
@@ -59,12 +59,9 @@ router.get('/moviereviews/:id', async (req, res) => {
     axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US`)
       .then(async (response) => {
         const reviews = await Review.findAll({
-          
           where: {
             movie_id: response.data.id,
-            reviews
           }
-       
         });
 
 
@@ -72,11 +69,11 @@ router.get('/moviereviews/:id', async (req, res) => {
           reviewData: response.data,
           loggedIn: req.session.loggedIn
         });
-        res.json(response.data)
+        //res.json(response.data)
       })
   } catch (err) {
     console.log(err)
-     res.json(err)
+    // res.json(err)
     res.send("error")
   }
 });
@@ -135,5 +132,10 @@ router.get('/login', async (req, res) => {
   }
   res.render('login');
 });
+
+router.use('/api', apiRoutes);
+router.use((req, res) => {
+    res.status(404).end();
+  });
 
 module.exports = router;

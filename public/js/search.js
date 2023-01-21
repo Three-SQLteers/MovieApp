@@ -1,5 +1,5 @@
 // const { SequelizeScopeError } = require("sequelize");
-require('dotenv').config();
+
 
 const movieInput = document.querySelector("#Movie-input");
 const movieBtn = document.querySelector("#movieBtn");

@@ -20,25 +20,25 @@ router.get('/:movieName',(req, res) => {
     })
   } catch(err) {
     console.log(err)
-    // res.json(err)
+     res.json(err)
     res.send("error")
   }
  
 })
 
-router.get('/:genreName',(req, res) => {
+// router.get('/:genreName',(req, res) => {
 
-   try {
-  axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=${req.params.genre_id}`)
-    .then((response) => {
-      res.json(response.data)
-    })
-  } catch(err) {
-   console.log(err)
-    // res.json(err)
-    res.send("error")
-   }
-  })
+//    try {
+//   axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY}&with_genres=${req.params.genre_id}`)
+//     .then((response) => {
+//       res.json(response.data)
+//     })
+//   } catch(err) {
+//    console.log(err)
+//     // res.json(err)
+//     res.send("error")
+//    }
+//   })
 // //const userRoutes = require('./user-routes.js');
 //const postRoutes = require('./post-routes');
 //const reviewRoutes = require('./reviewRoutes');
