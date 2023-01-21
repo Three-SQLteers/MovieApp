@@ -1,3 +1,4 @@
+
 async function reviewFormHandler(event){
     event.preventDefault();
 
@@ -21,15 +22,17 @@ async function reviewFormHandler(event){
            
         });
         console.log(response)
+        
+    function goToScore() {
+        document.location.assign(`/moviescore/${movie_id}`);
+        setTimeout(function () { goToScore() }, 1000);
     }
 
+  }
     goToScore();
 };
 
-function goToScore() {
-    document.location.assign('href', `/moviescore/${id}`);
-    setTimeout(function () { reviewFormHandler() }, 1000);
-  }
+
 
 document.querySelector('#reviewBtn').addEventListener('click', reviewFormHandler);
 

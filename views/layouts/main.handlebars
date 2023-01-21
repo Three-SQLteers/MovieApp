@@ -29,11 +29,21 @@
 
   <header class="hero">
     <h1 class="app-title"><a href="/">SO BAD, IT'S GOOD</a></h1>
+    
   </header>
 
   <main id="search-body">
     {{{body}}}
   </main>
+  <!-- Render script for logged in users only -->
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}} 
+
 
   <footer class="flex-row justify-center">
     &copy; 2023 SoBadItsGood
@@ -43,3 +53,5 @@
 
 
 </html>
+ 
+
