@@ -7,12 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "seed": "node seeds/seed.js"
-    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ajax": "^0.0.4",
     "axios": "^1.2.3",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
