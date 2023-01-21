@@ -22,7 +22,7 @@ function showMovies(data) {
 
     data.results.forEach(movie => {
         const { title, poster_path, genre, release_date, id } = movie;
-       
+  
         let movieCard = document.createElement("div");
         let movieTitle = document.createElement("h2");
         let poster = document.createElement("img");
