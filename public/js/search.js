@@ -9,6 +9,8 @@ const searchResults = document.getElementById("search-results");
 
 movieBtn.addEventListener("click", () => {
 
+    $("#search-results").empty();
+
     fetch('/api/search/' + movieInput.value)
         .then(response => response.json())
         .then(data => {
@@ -67,6 +69,9 @@ function showMovies(data) {
         movieCard.append(poster, movieId, movieTitle, movieGenre, Movierelease_date, movieScoreAnchor, anchorContainer )
 
         searchResults.appendChild(movieCard);
+
+
+
     })
 
 };

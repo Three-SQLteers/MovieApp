@@ -4,7 +4,7 @@
 
 Movies are the connective tissue that tie together our popular culture, partly because it's an amazing feeling to find a good one, but also because it's astoundingly fun to mock the terrible ones as well.  But how does one find them?  And how do you keep track of all the media you want to watch when everyone is offering their new suggestions?
 
-Enter Firewatch, a new movie review site that allows you to find good movies, so-bad-they're-good movies, and the truly neutral blockbuster.  Here you can share your thoughts about films while reading the thoughts of others, find friends and keep track of your watchlist, so you'll never be without new movies, when you're ready for something new, of course.
+Enter So Bad It's Good, a new movie review site that allows you to find good movies, so-bad-they're-good movies, and the truly neutral blockbuster.  Here you can share your thoughts about films while reading the thoughts of others, find friends and keep track of your watchlist, so you'll never be without new movies, when you're ready for something new, of course.
 
 ## User Story
 
