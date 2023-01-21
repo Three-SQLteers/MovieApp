@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
     review_string: req.body.review_string
   });
   res.status(200).json(userReviews);
-  console.log(userReviews);
 } catch (err) {
   res.status(400).json(err);
 }

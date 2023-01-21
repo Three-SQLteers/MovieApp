@@ -8,6 +8,7 @@ require('dotenv').config();
 //const dashboardRoutes = require('./dashboard-routes.js');
 //const homeRoutes = require('./home-routes');
 router.get('/', async (req, res) => {
+
   res.render('all');
 });
 
@@ -23,6 +24,7 @@ router.get('/search', async (req, res) => {
   res.render('search',{
 
           loggedIn: req.session.loggedIn
+
   });
 });
 

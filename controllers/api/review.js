@@ -9,7 +9,6 @@ const { Review, User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    console.log(`current request: ${req.session.user_id}`)
     const reviewData = await Review.create({
       movie_id: req.body.movie_id,
       quality_review_integer: req.body.quality_review_integer,
@@ -25,12 +24,5 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-// Create movie page
-// router.get('/', async (req, res) => {
-//       res.render('all');
-//     });
-// router.get('/moviereviews/:id', (req, res) => {
-// console.log('here')
 
-// router.use('/search', searchRoutes);
 module.exports = router;

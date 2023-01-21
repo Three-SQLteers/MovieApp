@@ -7,6 +7,10 @@
             <h4 class="movie-summary-header">Summary</h4>
             <p class="movie-summary-description">{{reviewData.overview}}</p>
         </div>
+        <div>
+            <h5>Find movies like {{reviewData.title}}</h5>
+            <button class="button" id="similarBtn">Search</button>
+        </div>
     </section>
 
     <section id="averaged-reviews" class="averaged-reviews display-6">
@@ -25,6 +29,7 @@
 
     <a class="button" id="movieBtn" href='/moviereviews/{{reviewData.id}}'>Write a review</a>
 
+    <section id="review-box"></section>
 </section>
 
 
