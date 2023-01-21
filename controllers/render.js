@@ -59,9 +59,12 @@ router.get('/moviereviews/:id', async (req, res) => {
     axios.get(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US`)
       .then(async (response) => {
         const reviews = await Review.findAll({
+          
           where: {
             movie_id: response.data.id,
+            reviews
           }
+       
         });
 
 
@@ -69,11 +72,11 @@ router.get('/moviereviews/:id', async (req, res) => {
           reviewData: response.data,
           loggedIn: req.session.loggedIn
         });
-        //res.json(response.data)
+        res.json(response.data)
       })
   } catch (err) {
     console.log(err)
-    // res.json(err)
+     res.json(err)
     res.send("error")
   }
 });
