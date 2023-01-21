@@ -14,9 +14,9 @@
 
 <body class="flex-column min-100-vh">
   <nav class="navbar">
-   <ul>
-     <li class="li-inline nav-item"><a href="/search">Search for movie</a></li>
-    <li class="li-inline nav-item"><a href="/">Dashboard</a></li>
+    <ul>
+      <li class="li-inline nav-item"><a href="/search">Search for movie</a></li>
+      <li class="li-inline nav-item"><a href="/">Dashboard</a></li>
       <!-- Conditionally render login link with UNLESS-->
       {{#if loggedIn}}
       <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
@@ -24,7 +24,7 @@
       <li class="li-inline nav-item"><a href="/login">Login</a></li>
       {{/if}}
     </ul>
-   
+
   </nav>
 
   <header class="hero">
@@ -39,5 +39,7 @@
     &copy; 2023 FireWatch
   </footer>
 </body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 </html>
