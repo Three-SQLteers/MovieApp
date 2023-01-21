@@ -77,7 +77,6 @@ function showMovies(data) {
         searchResults.appendChild(movieCard);
 
 
-
     })
 
 };
