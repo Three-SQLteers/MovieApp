@@ -8,9 +8,13 @@ const Review = require('./Review');
 //   onDelete: 'CASCADE'
 //   });
 
+  // Review.belongsTo(Movie, {
+  //   foreignKey: 'movie_id'
+
   Review.belongsTo(User, {
     foreignKey: 'user_id'
   })
+
 
 //  Movie.hasMany(Review, {
 //    foreignKey: 'movie_id'
