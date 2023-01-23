@@ -1,7 +1,7 @@
 <section id="movie-data" class="movie-data">
     <section id="review-results" class="review-results">
         <h1 class="movie-title-class">{{reviewData.title}}</h1>
-        <img src="https://image.tmdb.org/t/p/w200{{reviewData.poster_path}}">
+        <img class="review-movie-poster" src="https://image.tmdb.org/t/p/w200{{reviewData.poster_path}}">
         <p>{{format_date reviewData.release_date}}</p>
         <div class="summary">
             <h4 class="movie-summary-header">Summary</h4>
@@ -15,10 +15,11 @@
 <section id="user-review-sliders" class="user-review-sliders">
     {{!-- two sliders to review movies --}}
     {{#if loggedIn}}
-    <label for="quality_review_integer" class="form-label">How good was the movie?</label>
+    <label for="quality_review_integer" class="form-label">How well made was this movie?</label>
+    <label class="form-label">(Use this rating to score the skill of film making present)</label>
     <input type="range" class="form-range" min="0" max="10" id="quality_review_integer" list="quality-values">
     <datalist id="quality-values" style="font-size: 24pt;">
-        <option value="0" label="The Worst"></option>
+        <option value="0" label="Garbage"></option>
         <option value="1"></option>
         <option value="2"></option>
         <option value="3"></option>
@@ -28,11 +29,12 @@
         <option value="7"></option>
         <option value="8"></option>
         <option value="9"></option>
-        <option value="10" label="The Best!"></option>
+        <option value="10" label="Oscar Worthy!"></option>
     </datalist>
     </br>
     </br>
-    <label for="fun_review_integer" class="form-label">How fun was the movie?</label>
+    <label for="fun_review_integer" class="form-label">How much fun did you have watching it?</label>
+    <label class="form-label">(Use this rating to score how much fun you had, whether it was well-made or not)</label>
     <input type="range" class="form-range" min="0" max="10" id="fun_review_integer" list="fun-values">
     <datalist id="fun-values" style="font-size: 24pt;">
         <option value="0" label="Boring"></option>
@@ -40,7 +42,7 @@
         <option value="2"></option>
         <option value="3"></option>
         <option value="4"></option>
-        <option value="5" label="It's a movie"></option>
+        <option value="5" label="Occupied time"></option>
         <option value="6"></option>
         <option value="7"></option>
         <option value="8"></option>

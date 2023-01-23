@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: 'Limelight', serif;
     color: var(--secondary);
     line-height: 1.5;
     font-size: 24px;
@@ -26,7 +26,7 @@
   
   header {
     padding: 40px 0px 5px 0px;
-    text-align: center;
+    text-align: left;
     color: var(--secondary);
     border-bottom-style: solid;
     background-image: url("https://mms.businesswire.com/media/20211104006280/en/923877/5/AMCPerfectlyPopcorn.jpg");
@@ -83,12 +83,18 @@
     padding:2%;
     font-size:1.2em;
     font-weight: bold;
-    background: url('https://reeldealmovie.files.wordpress.com/2021/03/cropped-cropped-popcorn-header.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: var(--dark);
     color: black;
-    text-shadow: white 0px 0 10px;
+    box-shadow: inset 0 0 10px black;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: var(--secondary);
+    text-shadow: 1px 1px 1px rgb(0, 0, 0), 2px 2px 1px rgb(0, 0, 0);
+  }
+
+  .review-movie-poster {
+    width: 100%;
+    max-width: 400px;
   }
 
   .movie-data {
@@ -96,7 +102,7 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    padding: 5pt;
+    padding: 20pt;
     max-width: fit-content;
   }
 
@@ -104,16 +110,78 @@
     margin: auto;
     padding: 10px;
     width: 50%;
-    text-align: center;
+    text-align: left;
     padding: auto;
+    align-items: center;
   }
 
   .averaged-reviews {
     margin: auto;
     padding: 10px;
     width: 50%;
-    font-size: 3vh;
+    font-size: 30pt;
     padding: auto;
+  }
+
+  .integers {
+    font-size: 1em;
+  }
+
+  .user-reviews-container {
+    display: flex;
+    flex-direction: column;
+    column-count: 4;
+    width: 110%;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    background-color: var(--dark);
+    box-shadow: inset 0 0 200px black;
+    border: var(--secondary) 2pt solid;
+    border-radius: 15px;
+    padding: 10px;
+  }
+
+  .user-column {
+    float: left;
+    width: 15%;
+    padding: 0.5em;
+    text-align: left;
+    border: black solid 3pt;
+
+  }
+
+  .review-column {
+    float: left;
+    width: 65%;
+    min-width: 200px;
+    padding: 0.5em;
+    text-align: right;
+    border: black solid 3pt;
+
+  }
+
+  .quality-column {
+    float: left;
+    width: 10%;
+    padding: 0.5em;
+    border: black solid 3pt;
+
+  }
+
+  .fun-column {
+    float: left;
+    width: 10%;
+    padding: 0.5em;
+    border: black solid 3pt;
+
+  }
+
+  .user-reviews {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
   }
 
   .user-review-sliders {
@@ -129,14 +197,15 @@
   .movie-title-class {
     font-size: 5vh;
     font-size: 5vw;
+    text-align: center;
   }
 
   .movie-summary-header {
-    font-size: 2vh;
+    font-size: 20pt;
   }
 
   .movie-summary-description {
-    font-size: 1vh;
+    font-size: 12pt;
   }
 
   aside {
@@ -230,10 +299,7 @@
     margin: 20px auto;
     width: 94%;
   }
-  
-  p {
-    font-size: 1.2rem;
-  }
+
   
   input {
       width: 100%;
@@ -321,7 +387,7 @@
   .navbar {
     width: 100%;
     position: relative;
-    justify-content: center;
+    justify-content: left;
     display: flex;
     flex-direction: row;
   }
@@ -349,10 +415,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-  }
-  
-  p {
-    font-size: 1.2rem;
   }
   
    .btn {
@@ -592,7 +654,16 @@
   }
   
   /* col-sm */
-  @media screen and (min-width: 640px) {
+  @media screen and (min-width: 410px) {
+    .user-column,
+    .review-column,
+    .quality-column,
+    .fun-column {
+      font-size: 8pt;
+      width: 90px;
+    }
+    
+    
     .col-sm-1 {
       flex: 0 0 calc(100% * 1 / 12 - 2%);
     }
@@ -644,6 +715,14 @@
   
   /* col-md */
   @media screen and (min-width: 768px) {
+    .user-column,
+    .review-column,
+    .quality-column,
+    .fun-column {
+      font-size: 12pt;
+      width: 120px;
+    }
+
     .col-md-1 {
       flex: 0 0 calc(100% * 1 / 12 - 2%);
     }
@@ -695,6 +774,14 @@
   
   /* col-lg */
   @media screen and (min-width: 992px) {
+    .user-column,
+    .review-column,
+    .quality-column,
+    .fun-column {
+      font-size: 18pt;
+      width: 300px;
+    }
+
     .col-lg-1 {
       flex: 0 0 calc(100% * 1 / 12 - 2%);
     }
