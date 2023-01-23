@@ -338,6 +338,7 @@
     background-color: var(--secondary-dark);
     box-shadow: 3px 3px var(--dark);
     transform: translate(-1px, -1px);
+    background: linear-gradient(to right, #EE7724, #D8363A, #DD3675, #B44593);
   }
 
   .searchBtn {
