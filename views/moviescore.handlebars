@@ -1,7 +1,7 @@
 <section id="movie-data" class="movie-data">
     <section id="review-results" class="review-results">
         <h1 class="movie-title-class">{{reviewData.title}}</h1>
-        <img src="https://image.tmdb.org/t/p/w200{{reviewData.poster_path}}">
+        <img class="review-movie-poster" src="https://image.tmdb.org/t/p/w200{{reviewData.poster_path}}">
         <p>{{format_date reviewData.release_date}}</p>
         <div class="summary">
             <h4 class="movie-summary-header">Summary</h4>
@@ -10,22 +10,55 @@
     </section>
 
     <section id="averaged-reviews" class="averaged-reviews display-6">
-        <p>Movie Quality: {{reviewObj.avgScore}}</p>
-        <p>Fun Factor: {{reviewObj.funScore}}</p>
-
+        <div class="integers">
+            <p>Movie Quality: {{reviewObj.avgScore}}</p>
+            <p>Fun Factor: {{reviewObj.funScore}}</p>
+        </div>
+        </br>
         <div>
-            <h2>User Comments:</h2>
-            <div>
-                {{#each reviews}}
-                <p>{{review_string}} by {{user.name}}</p>
-                {{/each}}
-            </div>
+            <a class="button" id="button" href='/moviereviews/{{reviewData.id}}'>Write a review</a>
         </div>
     </section>
 
-    <a class="button" id="button" href='/moviereviews/{{reviewData.id}}'>Write a review</a>
+
+    <div class="user-reviews-container">
+        <h2>User Comments:</h2>
+        <div class="review-columns">
+            <div class="user-reviews">
+                <div class="user-column">
+                    <p>User</p>
+                </div>
+                <div class="review-column">
+                    <p>Review</p>
+                </div>
+                <div class="quality-column">
+                    <p>Movie Quality</p>
+                </div>
+                <div class="fun-column">
+                    <p>How fun was it?</p>
+                </div>
+            </div>
+            {{#each reviews}}
+            <div class="user-reviews">
+                <div class="user-column">
+                    <p>{{user.name}}</p>
+                </div>
+                <div class="review-column">
+                    <p>{{review_string}}</p>
+                </div>
+                <div class="quality-column">
+                    <p>{{quality_review_integer}}</p>
+                </div>
+                <div class="fun-column">
+                    <p>{{fun_review_integer}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
 
     <section id="review-box"></section>
+
 </section>
 
 
