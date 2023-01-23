@@ -13,28 +13,33 @@
 </head>
 
 <body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul>
-      <li class="li-inline nav-item"><a href="/search">Search for movie</a></li>
-      <li class="li-inline nav-item"><a href="/">Homepage</a></li>
-      <!-- Conditionally render login link with UNLESS-->
-      {{#if loggedIn}}
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-      {{else}}
-      <li class="li-inline nav-item"><a href="/login">Login</a></li>
-      {{/if}}
-    </ul>
-
-  </nav>
-
   <header class="hero">
-    <h1 class="app-title"><a href="/">SO BAD, IT'S GOOD</a></h1>
-    
+    <div class="app-title">
+      <h1><a href="/">SO BAD, IT'S GOOD!</a></h1>
+    </div>
+    <div>
+      <nav class="container">
+        <ul class="nav row justify-content-left">
+          <li class="li-inline nav-link col-sm-auto"><a href="/">Homepage</a></li>
+
+          <li class="li-inline nav-link col-sm-auto"><a href="/search">Search for a movie</a></li>
+          <!-- Conditionally render login link with UNLESS-->
+          {{#if loggedIn}}
+          <li class="li-inline nav-link col-sm-auto"><a href="#" id="logout-link">Logout</a></li>
+          {{else}}
+          <li class="li-inline nav-link col-sm-auto"><a href="/login">Login</a></li>
+          {{/if}}
+        </ul>
+      </nav>
+    </div>
+
+
   </header>
 
   <main id="search-body">
     {{{body}}}
   </main>
+
   <!-- Render script for logged in users only -->
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
@@ -42,16 +47,12 @@
 
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
-  {{/if}} 
+  {{/if}}
 
 
-  <footer class="flex-row justify-center">
+  <footer class="footer">
     &copy; 2023 SoBadItsGood
   </footer>
 </body>
 
-
-
 </html>
- 
-

@@ -61,6 +61,7 @@ function showMovies(data) {
 
         poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${poster_path}`)
         poster.setAttribute('alt', `${title}'s movie poster`)
+        poster.setAttribute('class', 'poster')
 
 
         anchorContainer.append(selectMovie)
