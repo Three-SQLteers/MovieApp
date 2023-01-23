@@ -21,7 +21,7 @@ async function reviewFormHandler(event){
             headers:{'Content-Type': 'application/json'}
            
         });
-        console.log(response)
+       
         
     function goToScore() {
         document.location.assign(`/moviescore/${movie_id}`);

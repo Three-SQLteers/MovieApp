@@ -55,7 +55,6 @@ function showMovies(data) {
         movieTitle.textContent = title;
         Movierelease_date.textContent = release_date;
         movieGenre.textContent = genre;
-        // selectScore.textContent = "Movie Score";
         selectMovie.textContent = "Review Movie";
 
 

@@ -1,9 +1,6 @@
 const router = require('express').Router();
 const { Review, User } = require('../../models');
-// const axios = require('axios');
-// require('dotenv').config();
-// const searchRoutes = require('./search')
-// CREATE new review
+
   
 
 
@@ -20,7 +17,7 @@ router.post('/', async (req, res) => {
       res.status(200).json(reviewData);
     
   } catch (err) {
-    console.log(err);
+   
     res.status(500).json(err);
   }
 

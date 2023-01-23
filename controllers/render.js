@@ -9,15 +9,11 @@ require('dotenv').config();
 
 router.get('/', async (req, res) => {
 
-  res.render('all');
-});
+  res.render('all',{
 
-router.get('/profile', async (req, res) => {
-  res.render('profile');
-});
+    loggedIn: req.session.loggedIn
 
-router.get('/ranking', async (req, res) => {
-  res.render('ranking');
+});
 });
 
 router.get('/search', async (req, res) => {
@@ -35,20 +31,18 @@ router.get('/viewreview', async (req, res) => {
         const reviews = await Review.findAll({
           where: {
             movie_id: response.data.id,
-            //we need data from our server to be able to be posted on the HTML page. 
+       
           }
         });
-        console.log(typeof (reviews))
-        console.log(reviews[0].review_string);
         res.render('viewreview', {
           reviewData: response.data,
           loggedIn: req.session.loggedIn
         });
-        //res.json(response.data)
+        
       })
   } catch (err) {
     console.log(err)
-    // res.json(err)
+   
     res.send("error")
   }
 });
@@ -69,11 +63,11 @@ router.get('/moviereviews/:id', async (req, res) => {
           reviewData: response.data,
           loggedIn: req.session.loggedIn
         });
-        //res.json(response.data)
+      
       })
   } catch (err) {
     console.log(err)
-    // res.json(err)
+   
     res.send("error")
   }
 });
@@ -118,7 +112,6 @@ router.get('/moviescore/:id', async (req, res) => {
 })
   } catch (err) {
     console.log(err)
-    // res.json(err)
     res.send("error")
   }
 });
@@ -133,8 +126,6 @@ router.get('/login', async (req, res) => {
   res.render('login');
 });
 
-// router.use((req, res) => {
-//     res.status(404).end();
-//   });
+
 
 module.exports = router;
