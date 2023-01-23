@@ -60,6 +60,12 @@ function showMovies(data) {
         
         if(poster_path === null) {
         poster.setAttribute('src', '/assets/no-image-icon.png')
+        let posterTitle = document.createElement("p");
+        posterTitle.setAttribute ("class", "blankPostertitle")
+        posterTitle.textContent = title;
+        movieCard.append(posterTitle)
+        
+       
         
         }else{
 
