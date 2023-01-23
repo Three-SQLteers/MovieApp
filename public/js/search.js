@@ -10,7 +10,7 @@ const searchResults = document.getElementById("search-results");
 // Search button functionality
 movieBtn.addEventListener("click", () => {
 
-    // Clean();
+    Clean();
 
     fetch('/api/search/' + movieInput.value)
         .then(response => response.json())
@@ -20,9 +20,9 @@ movieBtn.addEventListener("click", () => {
 })
 
 // Removing previous results
-// function Clean(){
-//     document.getElementById('search-results').innerHTML='';
-//   }  
+function Clean(){
+    document.getElementById('search-results').innerHTML='';
+  }  
 
 // Movie Card with title search
 function showMovies(data) {
@@ -47,7 +47,7 @@ function showMovies(data) {
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" )
         selectScore.setAttribute ("id", "scorebtn")
-        // selectScore.setAttribute ("class", "poster-button")
+        selectScore.setAttribute ("class", "poster-button")
         movieScoreAnchor.setAttribute('href', `/moviescore/${id}`)        
         anchorContainer.setAttribute('href', `/moviereviews/${id}`)
         movieId.setAttribute("id", "fetchMovieId")         
@@ -61,11 +61,12 @@ function showMovies(data) {
 
         poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${poster_path}`)
         poster.setAttribute('alt', `${title}'s movie poster`)
+        poster.setAttribute('class', 'poster')
 
 
         anchorContainer.append(selectMovie)
         movieScoreAnchor.append(selectScore)
-        movieCard.append(poster, movieId, movieTitle, movieGenre, Movierelease_date, movieScoreAnchor, anchorContainer )
+        movieCard.append(poster, movieScoreAnchor )
 
         searchResults.appendChild(movieCard);
 

@@ -1,37 +1,41 @@
 :root {
-    --primary: #389393;
-    --secondary: #f5a25d;
-    --tertiary: #fa7f72;
+    --primary: #79d8dd;
+    --secondary: #ddd48f;
+    --tertiary: #134794;
     --quatrinary: #6c6b67;
-    --light: #ebebeb;
-    --dark: #182c23;
+    --secondary: #ebe29f;
+    --dark: #9a1d1d;
     --error: rgb(228, 46, 1);
-    --border-radius: 0.3rem;
+    --border-radius: 5%;
+    text-shadow: 1px 1px 1px black, 2px 2px 1px black;
   }
   
   body {
-    font-family: Arial;
+    background-color: transparent;
+    background-image: url("https://wallpapercave.com/wp/wp3441226.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    justify-content: flex-start;
-    background-color: var(--quatrinary);
+    padding: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    color: var(--secondary);
+    line-height: 1.5;
+    font-size: 24px;
   }
   
   header {
-    padding: 40px;
+    padding: 40px 0px 5px 0px;
     text-align: center;
-    background: var(--primary);
     color: var(--secondary);
     border-bottom-style: solid;
+    background-image: url("https://mms.businesswire.com/media/20211104006280/en/923877/5/AMCPerfectlyPopcorn.jpg");
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
-  #navbar { 
-    display: flex;
-    justify-content: center;
-    margin: 5rem
-  }
-  /* from the movie project */
+
   .searchResults {
     display: flex;
     flex-wrap: wrap;
@@ -45,15 +49,21 @@
     justify-content: center;
     border: 2pt solid black;
     max-width: 204px;
+    height: 304px;
     margin: 10px;
-    padding-bottom: 5pt;
-    position:  relative;
+    position: relative;
+    border-radius: 5%;
+  }
+
+  .poster {
+    border-radius: 5px;
+    border: none;
   }
 
   .movieInfo {
     text-align: center;
     justify-content: center;
-    border: 2pt solid black;
+    border: 0.5pt solid black;
     max-width: 204px;
     margin: 10px;
     padding-bottom: 5pt;
@@ -65,6 +75,20 @@
 
   .hide {
     display: none;
+  }
+
+  .textarea {
+    width: 100%;
+    height:150px;
+    padding:2%;
+    font-size:1.2em;
+    font-weight: bold;
+    background: url('https://reeldealmovie.files.wordpress.com/2021/03/cropped-cropped-popcorn-header.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: black;
+    text-shadow: white 0px 0 10px;
   }
 
   .movie-data {
@@ -120,26 +144,25 @@
     background-color: var(--tertiary);
     padding: 80px;
     text-align: left;
-    color: var(--light);
-  }
-  
-  nav {
-    background-color: var(--secondary);
+    color: var(--secondary);
   }
 
   .poster-button {
     width: 200px;
     height: 300px;
     background-color: transparent;
-    border: none !important;
+    border: none;
     font-size: 0;
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 5%;
   }
   
   
   
   .card-header {
-    color: var(--light);
+    color: var(--secondary);
     margin: 0;
     background-color: var(--secondary);
     padding: 0.625rem;
@@ -161,79 +184,51 @@
   .container {
     display: flex;
     flex-flow: column wrap;
-    align-content: flex-start;
-    align-items: center;
+    align-items: left;
   }
   
-  footer {
-    border-top: 1px solid rgb(18, 16, 16);
+  .footer {
     display: flex;
+    text-align: center;
     justify-content: center;
-    font-size: 150%;
-    color:black;
-    position: static;
-    padding: 10px;
+    font-size: 0.5em;
+    color: var(--secondary);
+    left: 0;
     bottom: 0;
     width: 100%;
     height: 3rem;
-  }
-
-
-  :root {
-    --primary: #ccdad1;
-    --secondary: #9caea9;
-    --tertiary: #788585;
-    --light-dark: #320692;
-    --dark: #203381;
-    --border-radius: .3rem;
-  }
-  
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: var(--primary);
-    margin: 0;
-    padding: 0;
-    font-family: "IBM Plex Sans", sans-serif;
-    color: var(--dark);
-    line-height: 1.5;
-    font-size: 16px;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 700;
-    margin: 0;
-    color: var(--dark);
-    line-height: 1.25;
-  }
-  
-  h2 a:visited {
-    color: var(--tertiary);
+    margin-bottom: .5em;
+    padding: 2em;
   }
   
   h2 a {
-    color: var(--primary);
+    color: var(--secondary);
+    transition: 0.5s;
+    text-decoration-line: underline;
   }
-  
-  header {
-    margin-top: 50px;
+
+  h2 a:hover {
+    color: var(--primary);
+    transition: 0.2s;
+  }
+
+  li a {
+    color: var(--dark);
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--secondary);
+    margin-bottom: 5px;
+    font-size: small;
+  }
+
+  .homepage-options {
+    padding: 0.7em;
+    text-align: center;
   }
   
   main {
     margin: 20px auto;
     width: 94%;
-  }
-  
-  a {
-    text-decoration: none;
   }
   
   p {
@@ -260,7 +255,7 @@
   }
   
   .card-header h2 {
-    color: var(--primary);
+    color: var(--dark);
   }
   
   .btn {
@@ -274,9 +269,29 @@
     color: var(--primary);
     border: none;
     outline: none;
-    background-color: var(--light-dark);
+    background-color: var(--secondary-dark);
     box-shadow: 3px 3px var(--dark);
     transform: translate(-1px, -1px);
+  }
+
+  .searchBtn {
+    transition: 0.2s;
+    text-shadow: none;
+    border: var(--tertiary) 2pt solid;
+    font-size: larger;
+    font-weight: bold;    
+    background-color: var(--secondary);
+    border-radius: 10px;
+  }
+
+  .searchBtn:hover {
+    transition: 0.2s;
+    color: var(--dark);
+    text-decoration: none;
+    font-size: larger;
+    text-shadow: none;
+    font-weight: bold;
+    border-radius: 5px;
   }
   
   .btn:hover {
@@ -291,121 +306,40 @@
     display: inline;
   }
   
+  .search-bar {
+    background-color: white;
+    color: black;
+    box-shadow: inset 0 0 10px black;
+    border-radius: 50px;
+    padding-left: 15px;
+  }
+
   .li-inline {
     display: inline;
   }
   
   .navbar {
     width: 100%;
-    position: fixed;
-    background-color: var(--dark);
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
   }
-  
-  .nav-item {
-    margin: 0 40px;
+
+  .nav-link a {
+    transition: 0.2s;
+    text-shadow: none;
+    border: var(--dark) 2pt solid;
+    font-weight: bold;
   }
-  
-  .nav-item a {
-    color: var(--primary);
-  }
-  
-  .hero {
-    padding: 3% 4%;
-    background-color: var(--dark);
-    color: var(--primary);
-  }
-  
-  .hero p {
-    max-width: 75%;
-  }
-  
-  .app-title {
-    font-size: 3rem;
-    background-color: var(--primary);
-    color: var(--dark);
-    padding: 0 10px;
-    display: inline-block;
-    border-radius: var(--border-radius);
-    box-shadow: 6px 5px var(--light-dark);
-  }
-  
-  .app-title a {
-    color: var(--dark);
-  }
-  
-  .list-group {
-    padding: 1%;
-  }
-  
-  .list-item {
-    margin-bottom: 10px;
-    padding: 1.5%;
-    border-radius: var(--border-radius);
-    background-color: var(--light-dark);
-    color: var(--primary);
+
+  .nav-link a:hover {
+    transition: 0.2s;
+    color: var(--tertiary);
     text-decoration: none;
-  }
-  
-  .list-item:hover {
-    background-color: var(--dark);
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: var(--primary);
-    margin: 0;
-    padding: 0;
-    font-family: "IBM Plex Sans", sans-serif;
-    color: var(--dark);
-    line-height: 1.5;
-    font-size: 24px;
-    /* color: var(--primary); */
-  }
-  
-  
-  
-  h1,
-  h2,
-  h3,
-  h5,
-  h6 {
-    font-weight: 700;
-    margin: 0;
-    color: var(--dark);
-    line-height: 1.25;
-  }
-  
-  
-  .link-color {
-      color: var(--primary);
-      padding: 10px;
-      margin: 10px
-  
-  }
-  .li-inline {
-    display: inline;
-  }
-  .navbar {
-    width: 100%;
-    position: fixed;
-    background-color: var(--dark);
-  }
-  
-  .nav-item {
-    margin: 0 40px;
-  }
-  
-  .nav-item a {
-    color: var(--primary);
-  }
-  
-  
-  main {
-    margin: 20px auto;
-    width: 94%;
+    font-size: medium;
+    text-shadow: none;
+    font-weight: bold;
   }
   
   .wrapper {
@@ -432,8 +366,7 @@
     color: white;
     border: none;
     outline: none;
-    background-color: var(--light-dark);
-    /* box-shadow: 3px 3px var(--dark); */
+    background-color: var(--secondary-dark);
     transform: translate(-1px, -1px);
   }
   
@@ -453,7 +386,7 @@
     color: var(--primary);
     border: none;
     outline: none;
-    background-color: var(--light-dark);
+    background-color: var(--secondary-dark);
     box-shadow: 3px 3px var(--secondary);
     transform: translate(-1px, -1px);
     display: inline-block;
@@ -471,24 +404,25 @@
     box-shadow: 2px 2px var(--dark);
   }
   
-  .hero {
-    padding: 3% 4%;
-    background-color: var(--dark);
-    color: var(--primary);
-  }
-  
-  .hero p {
-    max-width: 75%;
-  }
-  
   .app-title {
-    font-size: 3rem;
-    background-color: var(--primary);
-    color: var(--dark);
     padding: 0 10px;
     display: inline-block;
-    border-radius: var(--border-radius);
-    box-shadow: 6px 5px var(--light-dark);
+  }
+
+  .app-title a  {
+    font-size: 1.7em;
+    color: white;
+    padding: 10px;
+    transition: 0.2s;
+    box-shadow: 6px 5px var(--secondary-dark);
+    text-shadow: 1px 1px 1px black, 2px 2px 1px black;
+  }
+
+  .app-title a:hover  {
+    color: var(--tertiary);
+    padding: 10px;
+    text-decoration: none;
+    transition: 0.2s;
   }
   
   .list-group {
@@ -500,13 +434,13 @@
     margin-bottom: 10px;
     padding: 1.5%;
     border-radius: var(--border-radius);
-    background-color: var(--light-dark);
+    background-color: var(--secondary-dark);
     color: var(--primary);
     text-decoration: none;
   }
   
   .list-item:hover {
-    background-color: var(--dark);
+    background-color: var(--tertiary);
   }
   
   .status-icon {
@@ -523,71 +457,8 @@
   .icon-success {
     color: rgb(29, 153, 255);
   }
-  
-  /* CARDS */
-  .card {
-    margin: 0 0 20px 0;
-    border: 2px solid var(--dark);
-    border-radius: var(--border-radius);
-  }
-  
-  .card-header {
-    color: var(--primary);
-    background-color: var(--dark);
-    padding: 1%;
-    border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
-  }
-  
-  .card-body {
-    padding: 1%;
-  }
-  
-  h4 {
-    font-weight: 700;
-    margin: 0;
-    color: var(--primary);
-    line-height: 1.25;
-  }
-  
-  .link {
-      color: var(--primary);
-  }
-  
-  .login-link {
-    color: var(--dark);
-  }
-  
-  .nav {
-      padding: 10px;
-      line-height: 1.25;
-  }
-  
 
-  /* CARDS */
-  .card {
-    margin: 0 0 20px 0;
-    border: 3px solid var(--dark);
-    border-radius: var(--border-radius);
-  }
   
-  .card-header {
-    color: var(--primary);
-    background-color: var(--dark);
-    padding: 1%;
-    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
-  }
-  
-  .card-body {
-    padding: 1%;
-  }
-  
-  .card-body2 {
-    padding: 3%;
-    color: var(--primary);
-    background-color: var(--dark);
-    font-size: 1rem;
-    margin: 10px;
-  }
   
   /* FORM */
   .form-label,
@@ -606,7 +477,7 @@
     padding: 1%;
     margin: 5px 0;
     font-size: 1.2rem;
-    border: 2px solid var(--light-dark);
+    border: 2px solid var(--secondary-dark);
     border-radius: var(--border-radius);
   }
   
