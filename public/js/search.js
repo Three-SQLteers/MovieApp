@@ -29,20 +29,20 @@ function showMovies(data) {
 
 
     data.results.forEach(movie => {
-        const { title, poster_path, genre, release_date, id } = movie;
+        let { title, poster_path, genre, release_date, id } = movie;
   
-        let movieCard = document.createElement("div");
-        let movieTitle = document.createElement("h2");
-        let poster = document.createElement("img");
+  let movieCard = document.createElement("div");
+  let movieTitle = document.createElement("h2");
+  let poster = document.createElement("img");
       
-        let Movierelease_date = document.createElement("p");
+  let Movierelease_date = document.createElement("p");
         let movieId = document.createElement("p");
         let movieGenre = document.createElement("p");
         let movieScoreAnchor = document.createElement("a");
         let anchorContainer = document.createElement("a");
         let selectMovie = document.createElement("button");
         let selectScore = document.createElement("button");
-
+        
         movieCard.setAttribute("class","movieCard")
         searchResults.setAttribute("class", "searchResults")
         selectMovie.setAttribute("id","reviewbtn" )
@@ -56,9 +56,15 @@ function showMovies(data) {
         Movierelease_date.textContent = release_date;
         movieGenre.textContent = genre;
         selectMovie.textContent = "Review Movie";
-
+        
+        
+        if(poster_path === null) {
+        poster.setAttribute('src', '/assets/no-image-icon.png')
+        
+        }else{
 
         poster.setAttribute('src', `https://image.tmdb.org/t/p/w200${poster_path}`)
+        }
         poster.setAttribute('alt', `${title}'s movie poster`)
         poster.setAttribute('class', 'poster')
 

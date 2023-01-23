@@ -11,8 +11,12 @@
 
     <section id="averaged-reviews" class="averaged-reviews display-6">
         <div class="integers">
+            {{#if reviewObj.avgScore}}
             <p>Movie Quality: {{reviewObj.avgScore}}</p>
             <p>Fun Factor: {{reviewObj.funScore}}</p>
+            {{else}}
+            <p>Movie Not Reviewed Be The 1st!!</p>
+            {{/if}}
         </div>
         </br>
         <div>
@@ -47,6 +51,7 @@
                     <p>{{review_string}}</p>
                 </div>
                 <div class="quality-column">
+                    
                     <p>{{quality_review_integer}}</p>
                 </div>
                 <div class="fun-column">
