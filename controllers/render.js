@@ -41,7 +41,7 @@ router.get('/viewreview', async (req, res) => {
         
       })
   } catch (err) {
-    console.log(err)
+   
    
     res.send("error")
   }
@@ -66,7 +66,7 @@ router.get('/moviereviews/:id', async (req, res) => {
       
       })
   } catch (err) {
-    console.log(err)
+  
    
     res.send("error")
   }
@@ -93,7 +93,7 @@ router.get('/moviescore/:id', async (req, res) => {
           arrayFun.push(score.fun_review_integer)
           arrayQuality.push(score.quality_review_integer)
         })
-console.log(response.data)
+
         const averageFun = arrayFun => arrayFun.reduce((a, b) => a + b) / (arrayFun.length - 1);
         const averageQuality = arrayQuality => arrayQuality.reduce((a, b) => a + b) / (arrayQuality.length - 1);
 
@@ -112,7 +112,7 @@ console.log(response.data)
 
 })
   } catch (err) {
-    console.log(err)
+   
     res.send("error")
   }
 });
