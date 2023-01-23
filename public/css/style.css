@@ -77,11 +77,12 @@
     display: none;
   }
  .MainH1{
+  text-align: center;
   font-size: 1.7em;
-    color: white;
-    padding: 10px;
-    box-shadow: 6px 5px var(--secondary-dark);
-    text-shadow: 1px 1px 1px black, 2px 2px 1px black;
+  color: white;
+  padding: 10px;
+  box-shadow: 6px 5px var(--secondary-dark);
+  text-shadow: 1px 1px 1px black, 2px 2px 1px black;
 }
   .textarea {
     width: 100%;
@@ -474,12 +475,12 @@
     box-shadow: 2px 2px var(--dark);
   }
   
-  .app-title {
+  /* .app-title {
     padding: 0 10px;
     display: inline-block;
-  }
+  } */
 
-  .app-title a  {
+  .app-title {
     font-size: 1.7em;
     color: white;
     padding: 10px;
@@ -488,12 +489,6 @@
     text-shadow: 1px 1px 1px black, 2px 2px 1px black;
   }
 
-  .app-title a:hover  {
-    color: var(--tertiary);
-    padding: 10px;
-    text-decoration: none;
-    transition: 0.2s;
-  }
   
   .list-group {
     padding: 0;
