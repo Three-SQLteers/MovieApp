@@ -21,6 +21,7 @@ This project was designed by 3 people who enjoy watching bad movies as a way to 
 Once the github has been cloned, the following technologies are required using 'npm install':
 - axios
 - express
+- nodemon
 
 Other technologies required are Sequelize, Node.js and Insomnia.  
 
